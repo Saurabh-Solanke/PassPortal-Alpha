@@ -1,11 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {
-  ActivatedRoute,
-  Router,
-  NavigationEnd,
-  RouterLink,
-} from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { filter, distinctUntilChanged } from 'rxjs/operators';
 
 interface Breadcrumb {
@@ -57,7 +53,13 @@ export class BreadcrumbComponent implements OnInit {
       }
 
       const label = child.snapshot.data['breadcrumb'] || 'Home';
-      if (!breadcrumbs.some((crumb) => crumb.label === label)) {
+
+      // Skip redundant initial "Home" breadcrumb and ensure unique labels
+      if (breadcrumbs.length === 0 && label === 'Home' && url === '/') {
+        return this.createBreadcrumbs(child, url, breadcrumbs);
+      }
+
+      if (!breadcrumbs.some((b) => b.label === label && b.url === url)) {
         breadcrumbs.push({ label, url });
       }
 
