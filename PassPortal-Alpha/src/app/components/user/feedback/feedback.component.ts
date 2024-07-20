@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-feedback',
-  standalone: true,
-  imports: [],
   templateUrl: './feedback.component.html',
-  styleUrl: './feedback.component.css'
+  styleUrls: ['./feedback.component.css'],
+  standalone: true,
+  imports: [CommonModule, FormsModule],
 })
-export class FeedbackComponent {
-
-}
+export class FeedbackComponent {}

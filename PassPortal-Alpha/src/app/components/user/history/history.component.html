@@ -1,1 +1,58 @@
-<p>history works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header text-center">
+          <h2>Application History</h2>
+        </div>
+        <div class="card-body">
+          <form class="mb-3">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                id="search"
+                name="search"
+                placeholder="Name, Application Number"
+              />
+              <button class="btn" type="button">
+                <i class="fas fa-search me-2"></i> Search
+              </button>
+            </div>
+          </form>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Application Number</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Saurabh K Solanke</td>
+                <td>PUNE24000123</td>
+                <td><span class="text-success">Approved</span></td>
+              </tr>
+              <tr>
+                <td>Sanket K Solanke</td>
+                <td>PUNE24000124</td>
+                <td><span class="text-warning">Draft</span></td>
+              </tr>
+              <tr>
+                <td>Amin</td>
+                <td>PUNE24000125</td>
+                <td><span class="text-warning">Pending</span></td>
+              </tr>
+              <tr>
+                <td>Anish</td>
+                <td>PUNE24000126</td>
+                <td><span class="text-danger">Rejected</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
