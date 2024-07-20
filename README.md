@@ -1,5 +1,3 @@
-# PassPortal-Alpha
-
 ## PassPortal by Saurabh S
 
 Welcome to **PassPortal-Alpha**! This project is developed as part of my Angular practice during ThinkSchool. It aims to provide a comprehensive online portal for passport-related services.
