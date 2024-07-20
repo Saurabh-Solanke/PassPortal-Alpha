@@ -46,7 +46,7 @@ To get started with **PassPortal-Alpha**, follow these steps:
    ```bash
    npm install
 4. **Run the application**:
-```bash
+   ```bash
    ng serve
 
 ### Contributing
@@ -58,13 +58,10 @@ Contributions to **PassPortal-Alpha** are welcome! You can help by:
 
 Feel free to get involved and improve the project!
 
-### License
-
-This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
 
 ### Contact
 
-For any questions or feedback, you can reach out to me at [your-email@example.com](mailto:your-email@example.com).
+For any questions or feedback, you can reach out to me at [saurabhsolanke07@gmail.com](mailto:saurabhsolanke07@gmail.com).
 
 
 
