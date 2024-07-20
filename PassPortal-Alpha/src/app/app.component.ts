@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UserNavbarComponent } from './components/user-navbar/user-navbar.component';
+import { UserNavbarComponent } from './components/user/user-navbar/user-navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 
