@@ -54,7 +54,7 @@ export class BreadcrumbComponent implements OnInit {
 
       const label = child.snapshot.data['breadcrumb'] || 'Home';
 
-      // Skip redundant initial "Home" breadcrumb and ensure unique labels
+      // If this is the first child and it is 'Home', do not add it to the breadcrumbs
       if (breadcrumbs.length === 0 && label === 'Home' && url === '/') {
         return this.createBreadcrumbs(child, url, breadcrumbs);
       }

@@ -16,7 +16,7 @@ export const routes: Routes = [
     path: 'user-home',
     loadChildren: () =>
       import('./components/user/user.routes').then((m) => m.USER_ROUTES),
-    data: { breadcrumb: 'User Home' },
+    data: { breadcrumb: 'Home' },
   },
   {
     path: '**',
