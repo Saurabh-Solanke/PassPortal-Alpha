@@ -39,3 +39,32 @@ To get started with **PassPortal-Alpha**, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/your-username/PassPortal-Alpha.git
+2. **Navigate to the project directory**:
+    ```bash
+   cd PassPortal-Alpha
+3. **Install the dependencies**:
+   ```bash
+   npm install
+4. **Run the application**:
+```bash
+   ng serve
+
+### Contributing
+
+Contributions to **PassPortal-Alpha** are welcome! You can help by:
+- Reporting bugs.
+- Suggesting new features.
+- Submitting pull requests.
+
+Feel free to get involved and improve the project!
+
+### License
+
+This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
+
+### Contact
+
+For any questions or feedback, you can reach out to me at [your-email@example.com](mailto:your-email@example.com).
+
+
+
