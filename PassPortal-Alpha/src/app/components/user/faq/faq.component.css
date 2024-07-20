@@ -1,0 +1,37 @@
+:root {
+  --color-primary: #4a154b;
+  --color-secondary: #df6404;
+  --color-background: #ffe1cc;
+  --color-support1: #faf2f2;
+}
+
+/* Apply the background color to the body */
+body {
+  background-color: var(--color-background);
+}
+
+.jumbotron {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.accordion-button {
+  background-color: var(--color-support1);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.accordion-body {
+  background-color: var(--color-background);
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
