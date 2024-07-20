@@ -1,14 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FooterComponent } from '../footer/footer.component';
+import { FooterComponent } from '../../footer/footer.component';
+import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
+import { BreadcrumbComponent } from '../../breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',
   styleUrls: ['./user-home.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FooterComponent,
+    UserNavbarComponent,
+    BreadcrumbComponent,
+  ],
 })
 export class UserHomeComponent {
   username = 'Saurabh Solanke';
