@@ -1,1 +1,95 @@
-<p>new-passport works!</p>
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="serviceRequiredFormGroup">
+    <form [formGroup]="serviceRequiredFormGroup">
+      <ng-template matStepLabel>Service Required</ng-template>
+      <app-service-required
+        [formGroup]="serviceRequiredFormGroup"
+      ></app-service-required>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="applicantDetailsFormGroup">
+    <form [formGroup]="applicantDetailsFormGroup">
+      <ng-template matStepLabel>Applicant Details</ng-template>
+      <app-applicant-details
+        [formGroup]="applicantDetailsFormGroup"
+      ></app-applicant-details>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="familyDetailsFormGroup">
+    <form [formGroup]="familyDetailsFormGroup">
+      <ng-template matStepLabel>Family Details</ng-template>
+      <app-family-details
+        [formGroup]="familyDetailsFormGroup"
+      ></app-family-details>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="addressDetailsFormGroup">
+    <form [formGroup]="addressDetailsFormGroup">
+      <ng-template matStepLabel>Address Details</ng-template>
+      <app-address-details
+        [formGroup]="addressDetailsFormGroup"
+      ></app-address-details>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="emergencyContactFormGroup">
+    <form [formGroup]="emergencyContactFormGroup">
+      <ng-template matStepLabel>Emergency Contact</ng-template>
+      <app-emergency-contact
+        [formGroup]="emergencyContactFormGroup"
+      ></app-emergency-contact>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="otherDetailsFormGroup">
+    <form [formGroup]="otherDetailsFormGroup">
+      <ng-template matStepLabel>Other Details</ng-template>
+      <app-other-details
+        [formGroup]="otherDetailsFormGroup"
+      ></app-other-details>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="selfDeclarationFormGroup">
+    <form [formGroup]="selfDeclarationFormGroup">
+      <ng-template matStepLabel>Self Declaration</ng-template>
+      <app-self-declaration
+        [formGroup]="selfDeclarationFormGroup"
+      ></app-self-declaration>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="paymentFormGroup">
+    <form [formGroup]="paymentFormGroup">
+      <ng-template matStepLabel>Payment</ng-template>
+      <app-payment [formGroup]="paymentFormGroup"></app-payment>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button type="submit">Submit</button>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>
