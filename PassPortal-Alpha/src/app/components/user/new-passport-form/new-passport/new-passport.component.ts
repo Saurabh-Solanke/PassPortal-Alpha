@@ -22,6 +22,7 @@ import { PaymentComponent } from '../payment/payment.component';
     CommonModule,
     MatStepperModule,
     MatInputModule,
+    
     ReactiveFormsModule,
     ServiceRequiredComponent,
     ApplicantDetailsComponent,

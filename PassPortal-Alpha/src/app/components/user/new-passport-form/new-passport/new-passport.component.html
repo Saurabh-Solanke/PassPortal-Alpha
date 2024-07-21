@@ -1,4 +1,4 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper>
+<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
   <mat-step [stepControl]="serviceRequiredFormGroup">
     <form [formGroup]="serviceRequiredFormGroup">
       <ng-template matStepLabel>Service Required</ng-template>
@@ -6,7 +6,9 @@
         [formGroup]="serviceRequiredFormGroup"
       ></app-service-required>
       <div>
-        <button mat-button matStepperNext>Next</button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -17,8 +19,16 @@
         [formGroup]="applicantDetailsFormGroup"
       ></app-applicant-details>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -29,8 +39,16 @@
         [formGroup]="familyDetailsFormGroup"
       ></app-family-details>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -41,8 +59,16 @@
         [formGroup]="addressDetailsFormGroup"
       ></app-address-details>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -53,8 +79,16 @@
         [formGroup]="emergencyContactFormGroup"
       ></app-emergency-contact>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -65,8 +99,16 @@
         [formGroup]="otherDetailsFormGroup"
       ></app-other-details>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -77,8 +119,16 @@
         [formGroup]="selfDeclarationFormGroup"
       ></app-self-declaration>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-nxt me-4 mt-3" mat-button matStepperNext>
+          Next<i class="fas fa-arrow-right ms-2"></i>
+        </button>
       </div>
     </form>
   </mat-step>
@@ -87,8 +137,16 @@
       <ng-template matStepLabel>Payment</ng-template>
       <app-payment [formGroup]="paymentFormGroup"></app-payment>
       <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button type="submit">Submit</button>
+        <button
+          class="btn my-btn btn-prev me-4 mt-3"
+          mat-button
+          matStepperPrevious
+        >
+          <i class="fas fa-arrow-left me-2"></i>Prev
+        </button>
+        <button class="btn my-btn btn-green me-4 mt-3" mat-button type="submit">
+          <i class="fas fa-check me-2"></i>Submit
+        </button>
       </div>
     </form>
   </mat-step>
