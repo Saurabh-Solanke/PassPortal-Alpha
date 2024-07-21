@@ -13,3 +13,6 @@
   margin-top: 2.8em; /* Remove padding-top */
   margin-left: 0.3em;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
