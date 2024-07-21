@@ -1,7 +1,7 @@
+import { NewPassportComponent } from './new-passport-form/new-passport/new-passport.component';
 import { Routes } from '@angular/router';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { UserHomeComponent } from './user-home/user-home.component';
-import { NewPassportComponent } from './new-passport/new-passport.component';
 import { RenewalPassportComponent } from './renewal-passport/renewal-passport.component';
 import { HistoryComponent } from './history/history.component';
 import { FeedbackComponent } from './feedback/feedback.component';
