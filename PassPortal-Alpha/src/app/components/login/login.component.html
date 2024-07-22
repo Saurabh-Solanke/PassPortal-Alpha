@@ -1,1 +1,108 @@
-<p>login works!</p>
+<div class="container-fluid wrapper">
+  <div class="image-section">
+    
+<!-- Add something here -->
+  </div>
+
+  <div class="login-form">
+    <div class="form-content">
+      <div class="form-header text-center">
+        <h2>Login</h2>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <p class="text-center">Please fill in your login details</p>
+        <div class="form-row mb-3">
+          <div class="form-holder w-100">
+            <label for="loginIdentifier" class="form-label">
+              <i class="fas fa-user me-2"></i> Username, Email, or Phone Number
+            </label>
+            <input
+              type="text"
+              id="loginIdentifier"
+              formControlName="loginIdentifier"
+              class="form-control bg-transparent border-2"
+              [ngClass]="{
+                'is-invalid':
+                  loginForm.get('loginIdentifier')?.invalid &&
+                  loginForm.get('loginIdentifier')?.touched
+              }"
+              required
+            />
+            <div
+              *ngIf="
+                loginForm.get('loginIdentifier')?.invalid &&
+                loginForm.get('loginIdentifier')?.touched
+              "
+              class="invalid-feedback"
+            >
+              This field is required.
+            </div>
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <div class="form-holder w-100">
+            <label for="password" class="form-label">
+              <i class="fas fa-lock me-2"></i> Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              formControlName="password"
+              class="form-control bg-transparent border-2"
+              [ngClass]="{
+                'is-invalid':
+                  loginForm.get('password')?.invalid &&
+                  loginForm.get('password')?.touched
+              }"
+              required
+            />
+            <div
+              *ngIf="
+                loginForm.get('password')?.invalid &&
+                loginForm.get('password')?.touched
+              "
+              class="invalid-feedback"
+            >
+              <div *ngIf="loginForm.get('password')?.errors?.['required']">
+                This field is required.
+              </div>
+              <div *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                Password must be at least 8 characters long.
+              </div>
+              <div *ngIf="loginForm.get('password')?.errors?.['pattern']">
+                Password must contain at least 1 uppercase letter, 1 lowercase
+                letter, 1 number, and 1 special character.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-row mb-3">
+          <div class="d-grid justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="loginForm.invalid"
+            >
+              <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+          </div>
+        </div>
+        <div class="form-row text-center">
+          <div class="form-holder w-100">
+            <a routerLink="/forgotpassword" class="link-text">
+              <i class="fas fa-unlock-alt"></i> Forgot Password?
+            </a>
+          </div>
+        </div>
+        <div class="form-row text-center mt-3">
+          <div class="form-holder w-100">
+            Don't have an account?
+            <a routerLink="/signup" class="link-text">
+              <i class="fas fa-user-plus"></i> Signup here
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
