@@ -12,6 +12,7 @@ import { EmergencyContactComponent } from '../emergency-contact/emergency-contac
 import { OtherDetailsComponent } from '../other-details/other-details.component';
 import { SelfDeclarationComponent } from '../self-declaration/self-declaration.component';
 import { PaymentComponent } from '../payment/payment.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-new-passport',
@@ -22,7 +23,7 @@ import { PaymentComponent } from '../payment/payment.component';
     CommonModule,
     MatStepperModule,
     MatInputModule,
-    
+    MatIconModule,
     ReactiveFormsModule,
     ServiceRequiredComponent,
     ApplicantDetailsComponent,

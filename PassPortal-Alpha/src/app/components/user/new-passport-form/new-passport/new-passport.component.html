@@ -1,5 +1,7 @@
-<mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
-  <mat-step [stepControl]="serviceRequiredFormGroup">
+<div>
+  
+  <mat-horizontal-stepper [linear]="isLinear" #stepper="matHorizontalStepper">
+  <mat-step [stepControl]="serviceRequiredFormGroup" matStepperIcon="phone">
     <form [formGroup]="serviceRequiredFormGroup">
       <ng-template matStepLabel>Service Required</ng-template>
       <app-service-required
@@ -150,4 +152,8 @@
       </div>
     </form>
   </mat-step>
+  
 </mat-horizontal-stepper>
+
+
+

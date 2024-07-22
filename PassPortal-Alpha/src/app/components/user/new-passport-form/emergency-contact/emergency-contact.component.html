@@ -1,1 +1,78 @@
-<p>emergency-contact works!</p>
+<fieldset class="p-3">
+  <legend><b>Emergency Contact Details</b></legend>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="emergency_contact_name" class="form-label"
+        ><b>Name:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="emergency_contact_name"
+        name="emergency_contact_name"
+        required
+        maxlength="70"
+        placeholder="Enter name"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="emergency_contact_address" class="form-label"
+        ><b>Address :</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="emergency_contact_address"
+        name="emergency_contact_address"
+        maxlength="100"
+        placeholder="Enter address"
+      />
+      <em
+        >(Mention address only if different from present residential
+        address)</em
+      >
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="emergency_contact_mobile" class="form-label"
+        ><b>Mobile Number:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="emergency_contact_mobile"
+        name="emergency_contact_mobile"
+        required
+        placeholder="Enter mobile number"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="emergency_contact_telephone" class="form-label"
+        ><b>Telephone Number:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="emergency_contact_telephone"
+        name="emergency_contact_telephone"
+        placeholder="Enter telephone number"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="emergency_contact_email" class="form-label"
+        ><b>E-mail ID:</b></label
+      >
+      <input
+        type="email"
+        class="form-control w-75"
+        id="emergency_contact_email"
+        name="emergency_contact_email"
+        required
+        placeholder="Enter e-mail ID"
+      />
+    </div>
+  </div>
+</fieldset>

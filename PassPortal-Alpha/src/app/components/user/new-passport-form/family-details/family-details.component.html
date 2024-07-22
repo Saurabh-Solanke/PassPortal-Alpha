@@ -1,1 +1,418 @@
-<p>family-details works!</p>
+<fieldset class="p-3">
+    <legend><b>Family Details</b></legend>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="father_given_name" class="form-label"
+          ><b>Father's Given Name:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="father_given_name"
+          name="father_given_name"
+          required
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter father's given name"
+        />
+        <em class="form-text text-muted"
+          >[Given Name means First name followed by Middle
+          name (If any)(Initials not allowed)]</em
+        >
+      </div>
+      <div class="col-md-6">
+        <label for="father_surname" class="form-label"
+          ><b>Surname:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="father_surname"
+          name="father_surname"
+          required
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter father's surname"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="mother_given_name" class="form-label"
+          ><b>Mother's Given Name:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="mother_given_name"
+          name="mother_given_name"
+          required
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter mother's given name"
+        />
+        <em class="form-text text-muted"
+          >[Given Name means First name followed by Middle
+          name (If any)(Initials not allowed)]</em
+        >
+      </div>
+      <div class="col-md-6">
+        <label for="mother_surname" class="form-label"
+          ><b>Surname:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="mother_surname"
+          name="mother_surname"
+          required
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter mother's surname"
+        />
+      </div>
+    </div>
+
+    <hr class="custom-separator" />
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="minor_or_adult" class="form-label"
+          ><b>Are you a Minor or an Adult?</b></label
+        >
+        <div class="d-flex mb-2">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="minor_or_adult"
+              id="minor"
+              value="minor"
+            />
+            <label class="form-check-label" for="minor"
+              >Minor</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="minor_or_adult"
+              id="adult"
+              value="adult"
+            />
+            <label class="form-check-label" for="adult"
+              >Adult</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="adultFields">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="add_guardian_details"
+            />
+            <label
+              class="form-check-label"
+              for="add_guardian_details"
+              ><b
+                >Add Legal Guardian's/Parents Details</b
+              ></label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div id="guardianFields" style="display: none">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label
+              for="legal_guardian_given_name"
+              class="form-label"
+              ><b>Legal Guardian's Given Name:</b></label
+            >
+            <input
+              type="text"
+              class="form-control w-75"
+              id="legal_guardian_given_name"
+              name="legal_guardian_given_name"
+              minlength="1"
+              maxlength="45"
+              placeholder="Enter legal guardian's given name (if applicable)"
+            />
+            <em class="form-text text-muted"
+              >(If applicable) (Initials not allowed)</em
+            >
+          </div>
+          <div class="col-md-6">
+            <label
+              for="legal_guardian_surname"
+              class="form-label"
+              ><b>Surname:</b></label
+            >
+            <input
+              type="text"
+              class="form-control w-75"
+              id="legal_guardian_surname"
+              name="legal_guardian_surname"
+              minlength="1"
+              maxlength="45"
+              placeholder="Enter legal guardian's surname"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label
+              for="father_passport_number"
+              class="form-label"
+              ><b
+                >Father's/Legal Guardian's File/Passport
+                Number:</b
+              ></label
+            >
+            <input
+              type="text"
+              class="form-control w-75"
+              id="father_passport_number"
+              name="father_passport_number"
+              maxlength="15"
+              placeholder="Enter father's passport number"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="father_nationality" class="form-label"
+              ><b
+                >Father's/Legal Guardian's Nationality, if not
+                Indian:</b
+              ></label
+            >
+            <input
+              type="text"
+              class="form-control w-75"
+              id="father_nationality"
+              name="father_nationality"
+              maxlength="15"
+              placeholder="Enter father's nationality"
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label
+              for="mother_passport_number"
+              class="form-label"
+              ><b
+                >Mother's/Legal Guardian's File/Passport
+                Number:</b
+              ></label
+            >
+            <input
+              type="text"
+              class="form-control w-75"
+              id="mother_passport_number"
+              name="mother_passport_number"
+              maxlength="15"
+              placeholder="Enter mother's passport number"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="mother_nationality" class="form-label"
+              ><b
+                >Mother's/Legal Guardian's Nationality, if not
+                Indian:</b
+              ></label
+            >
+            <input
+              type="text"
+              class="form-control w-75"
+              id="mother_nationality"
+              name="mother_nationality"
+              maxlength="15"
+              placeholder="Enter mother's nationality"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="minorFields" style="display: none">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label
+            for="legal_guardian_given_name"
+            class="form-label"
+            ><b>Legal Guardian's Given Name:</b></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="legal_guardian_given_name"
+            name="legal_guardian_given_name"
+            minlength="1"
+            maxlength="45"
+            placeholder="Enter legal guardian's given name (if applicable)"
+          />
+          <em class="form-text text-muted"
+            >(If applicable) (Initials not allowed)</em
+          >
+        </div>
+        <div class="col-md-6">
+          <label
+            for="legal_guardian_surname"
+            class="form-label"
+            ><b>Surname:</b></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="legal_guardian_surname"
+            name="legal_guardian_surname"
+            minlength="1"
+            maxlength="45"
+            placeholder="Enter legal guardian's surname"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label
+            for="father_passport_number"
+            class="form-label"
+            ><b
+              >Father's/Legal Guardian's File/Passport
+              Number:</b
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="father_passport_number"
+            name="father_passport_number"
+            maxlength="15"
+            placeholder="Enter father's passport number"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="father_nationality" class="form-label"
+            ><b
+              >Father's/Legal Guardian's Nationality, if not
+              Indian:</b
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="father_nationality"
+            name="father_nationality"
+            maxlength="15"
+            placeholder="Enter father's nationality"
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label
+            for="mother_passport_number"
+            class="form-label"
+            ><b
+              >Mother's/Legal Guardian's File/Passport
+              Number:</b
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="mother_passport_number"
+            name="mother_passport_number"
+            maxlength="15"
+            placeholder="Enter mother's passport number"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="mother_nationality" class="form-label"
+            ><b
+              >Mother's/Legal Guardian's Nationality, if not
+              Indian:</b
+            ></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="mother_nationality"
+            name="mother_nationality"
+            maxlength="15"
+            placeholder="Enter mother's nationality"
+          />
+        </div>
+      </div>
+    </div>
+
+    <hr class="custom-separator" />
+
+    <div class="row mb-3">
+      <div class="col-md-12">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="add_spouse"
+          />
+          <label class="form-check-label" for="add_spouse"
+            ><b>Add Spouse's Name</b></label
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="spouseFields" style="display: none">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="spouse_given_name" class="form-label"
+            ><b>Spouse's Given Name:</b></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="spouse_given_name"
+            name="spouse_given_name"
+            minlength="1"
+            maxlength="45"
+            placeholder="Enter spouse's given name"
+          />
+          <em class="form-text text-muted"
+            >(Given Name means First name followed by Middle
+            name (If any)) (Initials not allowed)</em
+          >
+        </div>
+        <div class="col-md-6">
+          <label for="spouse_surname" class="form-label"
+            ><b>Surname:</b></label
+          >
+          <input
+            type="text"
+            class="form-control w-75"
+            id="spouse_surname"
+            name="spouse_surname"
+            minlength="1"
+            maxlength="45"
+            placeholder="Enter spouse's surname"
+          />
+        </div>
+      </div>
+    </div>
+
+    
+  </fieldset>

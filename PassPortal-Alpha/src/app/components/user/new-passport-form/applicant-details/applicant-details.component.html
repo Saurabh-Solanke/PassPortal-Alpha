@@ -1,1 +1,504 @@
-<p>applicant-details works!</p>
+<fieldset class="p-3">
+    <legend><b>Applicant Details</b></legend>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="given_name" class="form-label"
+          ><b>Given Name:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="given_name"
+          name="given_name"
+          required
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter your given name"
+        />
+        <em class="form-text text-muted"
+          >[Given Name means First name followed by Middle
+          name (If any)(Initials not allowed)]</em
+        >
+      </div>
+      <div class="col-md-6">
+        <label for="surname" class="form-label"
+          ><b>Surname:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="surname"
+          name="surname"
+          required
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter your surname"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label"
+          ><b
+            >Are you known by any other names (aliases)?</b
+          ></label
+        >
+        <div class="d-flex mb-2">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="known_by_other_names"
+              id="known_yes"
+              value="yes"
+            />
+            <label class="form-check-label" for="known_yes"
+              >Yes</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="known_by_other_names"
+              id="known_no"
+              value="no"
+            />
+            <label class="form-check-label" for="known_no"
+              >No</label
+            >
+          </div>
+        </div>
+        <em class="form-text text-muted"
+          >If yes, please provide the aliases :</em
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="aliases"
+          name="aliases"
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter aliases"
+        />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label"
+          ><b>Have you ever changed your name?</b></label
+        >
+        <div class="d-flex mb-2">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="changed_name"
+              id="changed_yes"
+              value="yes"
+            />
+            <label class="form-check-label" for="changed_yes"
+              >Yes</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="changed_name"
+              id="changed_no"
+              value="no"
+            />
+            <label class="form-check-label" for="changed_no"
+              >No</label
+            >
+          </div>
+        </div>
+        <em class="form-text text-muted"
+          >If yes, please provide the previous name :</em
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="previous_name"
+          name="previous_name"
+          minlength="1"
+          maxlength="45"
+          placeholder="Enter previous name"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="dob" class="form-label"
+          ><b>Date of Birth:</b></label
+        >
+        <input
+          type="date"
+          class="form-control w-75"
+          id="dob"
+          name="dob"
+          required
+          placeholder="Select date of birth"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="place_of_birth" class="form-label"
+          ><b
+            >Place of Birth (Village or Town or City):</b
+          ></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="place_of_birth"
+          name="place_of_birth"
+          required
+          minlength="1"
+          maxlength="25"
+          placeholder="Enter place of birth"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="state" class="form-label"
+          ><b>State/UT (If born in India):</b></label
+        >
+        <select
+          class="form-select form-control w-75"
+          id="state"
+          name="state"
+          required
+        >
+          <option value="" disabled selected>
+            Select State
+          </option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="district" class="form-label"
+          ><b>District (If born in India):</b></label
+        >
+        <select
+          class="form-select form-control w-75"
+          id="district"
+          name="district"
+          required
+        >
+          <option value="" disabled selected>
+            Select State First
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="region_country" class="form-label"
+          ><b>Region/Country (If born abroad):</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="region_country"
+          name="region_country"
+          required
+          minlength="1"
+          maxlength="25"
+          placeholder="Enter region/country"
+        />
+        <em class="form-text text-muted"
+          >If born before 15/08/1947 in a place now in
+          Pakistan or Bangladesh, write "Undivided India"</em
+        >
+      </div>
+      <div class="col-md-6">
+        <label class="form-label"><b>Gender:</b></label>
+        <div class="d-flex mb-2">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="male"
+              value="male"
+            />
+            <label class="form-check-label" for="male"
+              >Male</label
+            >
+          </div>
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+            />
+            <label class="form-check-label" for="female"
+              >Female</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="gender"
+              id="transgender"
+              value="transgender"
+            />
+            <label class="form-check-label" for="transgender"
+              >Transgender</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="marital_status" class="form-label"
+          ><b>Marital Status:</b></label
+        >
+        <select
+          class="form-select form-control w-75"
+          id="marital_status"
+          name="marital_status"
+        >
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+          <option value="divorced">Divorced</option>
+          <option value="widow_widower">Widow/Widower</option>
+          <option value="separated">Separated</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="citizenship" class="form-label"
+          ><b>Citizenship of India by:</b></label
+        >
+        <select
+          class="form-select form-control w-75"
+          id="citizenship"
+          name="citizenship"
+        >
+          <option value="birth">Birth</option>
+          <option value="descent">Descent</option>
+          <option value="registration_naturalization">
+            Registration/Naturalization
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="pan" class="form-label"
+          ><b>PAN (If available):</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="pan"
+          name="pan"
+          minlength="10"
+          maxlength="10"
+          placeholder="Enter PAN"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="voter_id" class="form-label"
+          ><b>Voter ID (If available):</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="voter_id"
+          name="voter_id"
+          placeholder="Enter Voter ID"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="employment_type" class="form-label"
+          ><b>Employment Type:</b></label
+        >
+        <select
+          class="form-select form-control w-75"
+          id="employment_type"
+          name="employment_type"
+        >
+          <option value="psu">PSU</option>
+          <option value="government">Government</option>
+          <option value="statutory_body">
+            Statutory Body
+          </option>
+          <option value="retired_government_servant">
+            Retired Government Servant
+          </option>
+          <option value="self_employed">Self Employed</option>
+          <option value="private">Private</option>
+          <option value="homemaker">Homemaker</option>
+          <option value="not_employed">Not Employed</option>
+          <option value="retired_private_service">
+            Retired-Private Service
+          </option>
+          <option value="student">Student</option>
+          <option value="others">Others</option>
+          <option value="x">
+            Owners, Partners & Directors of companies which
+            are members of CII, FICCI & ASSOCHAM
+          </option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="organization_name" class="form-label"
+          ><b
+            >If employed in Government/ Statutory Body/ PSU,
+            specify organization name:</b
+          ></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="organization_name"
+          name="organization_name"
+          minlength="1"
+          maxlength="30"
+          placeholder="Enter organization name"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label"
+          ><b
+            >Is either of your parent (in case of minor)/
+            spouse, a government servant?</b
+          ></label
+        >
+        <div class="d-flex mb-2">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="parent_spouse_government_servant"
+              id="parent_yes"
+              value="yes"
+            />
+            <label class="form-check-label" for="parent_yes"
+              >Yes</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="parent_spouse_government_servant"
+              id="parent_no"
+              value="no"
+            />
+            <label class="form-check-label" for="parent_no"
+              >No</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="education" class="form-label"
+          ><b>Educational Qualification:</b></label
+        >
+        <select
+          class="form-select form-control w-75"
+          id="education"
+          name="education"
+        >
+          <option value="7th_pass_or_less">
+            7th pass or less
+          </option>
+          <option value="between_8th_and_9th_standard">
+            Between 8th and 9th Standard
+          </option>
+          <option value="10th_pass_and_above">
+            10th pass and above
+          </option>
+          <option value="graduate_and_above">
+            Graduate and above
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label"
+          ><b
+            >Are you eligible for Non-ECR category?</b
+          ></label
+        >
+        <div class="d-flex mb-2">
+          <div class="form-check me-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="non_ecr"
+              id="non_ecr_yes"
+              value="yes"
+            />
+            <label class="form-check-label" for="non_ecr_yes"
+              >Yes</label
+            >
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="non_ecr"
+              id="non_ecr_no"
+              value="no"
+            />
+            <label class="form-check-label" for="non_ecr_no"
+              >No</label
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="distinguishing_mark" class="form-label"
+          ><b>Visible Distinguishing Mark:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="distinguishing_mark"
+          name="distinguishing_mark"
+          minlength="1"
+          maxlength="30"
+          placeholder="Enter distinguishing mark"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="aadhaar" class="form-label"
+          ><b>Aadhaar Number:</b></label
+        >
+        <input
+          type="text"
+          class="form-control w-75"
+          id="aadhaar"
+          name="aadhaar"
+          minlength="12"
+          maxlength="12"
+          placeholder="Enter Aadhaar number"
+        />
+      </div>
+    </div>
+
+   
+  </fieldset>

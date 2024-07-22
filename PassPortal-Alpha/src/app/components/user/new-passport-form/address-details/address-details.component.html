@@ -1,1 +1,236 @@
-<p>address-details works!</p>
+<fieldset class="p-3">
+  <legend>
+    <b
+      >Present Residential Address Details (Where applicant presently
+      resides)</b
+    >
+  </legend>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="present_house_street" class="form-label"
+        ><b>House No. and Street Name:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="present_house_street"
+        name="present_house_street"
+        required
+        minlength="1"
+        maxlength="40"
+        placeholder="Enter house no. and street name"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="present_town" class="form-label"
+        ><b>Village or Town or City:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="present_town"
+        name="present_town"
+        required
+        minlength="1"
+        maxlength="30"
+        placeholder="Enter village or town or city"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="present_state" class="form-label"><b>State/UT:</b></label>
+      <select
+        class="form-select w-75"
+        id="present_state"
+        name="present_state"
+        required
+      >
+        <option value="" disabled selected>Select State</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="present_district" class="form-label"><b>District:</b></label>
+      <select
+        class="form-select w-75"
+        id="present_district"
+        name="present_district"
+        required
+      >
+        <option value="" disabled selected>Select District</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="present_police_station" class="form-label"
+        ><b>Police Station:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="present_police_station"
+        name="present_police_station"
+        required
+        minlength="1"
+        maxlength="30"
+        placeholder="Enter police station"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="pin" class="form-label"><b>PIN:</b></label>
+      <input
+        type="text"
+        class="form-control w-75"
+        id="pin"
+        name="pin"
+        required
+        placeholder="Enter PIN"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="mobile_number" class="form-label"
+        ><b>Mobile Number:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="mobile_number"
+        name="mobile_number"
+        required
+        placeholder="Enter mobile number"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="telephone_number" class="form-label"
+        ><b>Telephone Number:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="telephone_number"
+        name="telephone_number"
+        placeholder="Enter telephone number"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="email" class="form-label"><b>E-mail ID:</b></label>
+      <input
+        type="email"
+        class="form-control w-75"
+        id="email"
+        name="email"
+        required
+        placeholder="Enter e-mail ID"
+      />
+    </div>
+  </div>
+  <hr class="custom-separator" />
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="same_address" />
+        <label class="form-check-label" for="same_address"
+          ><b>Permanent address same as present address</b></label
+        >
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+<fieldset class="p-3">
+  <legend>
+    <b>Permanent Residential Address Details</b>
+  </legend>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="permanent_house_street" class="form-label"
+        ><b>House No. and Street Name:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="permanent_house_street"
+        name="permanent_house_street"
+        required
+        minlength="1"
+        maxlength="40"
+        placeholder="Enter house no. and street name"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="permanent_town" class="form-label"
+        ><b>Village or Town or City:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="permanent_town"
+        name="permanent_town"
+        required
+        minlength="1"
+        maxlength="30"
+        placeholder="Enter village or town or city"
+      />
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="permanent_state" class="form-label"><b>State/UT:</b></label>
+      <select
+        class="form-select w-75"
+        id="permanent_state"
+        name="permanent_state"
+        required
+      >
+        <option value="" disabled selected>Select State</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label for="permanent_district" class="form-label"
+        ><b>District:</b></label
+      >
+      <select
+        class="form-select w-75"
+        id="permanent_district"
+        name="permanent_district"
+        required
+      >
+        <option value="" disabled selected>Select District</option>
+      </select>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label for="permanent_police_station" class="form-label"
+        ><b>Police Station:</b></label
+      >
+      <input
+        type="text"
+        class="form-control w-75"
+        id="permanent_police_station"
+        name="permanent_police_station"
+        required
+        minlength="1"
+        maxlength="30"
+        placeholder="Enter police station"
+      />
+    </div>
+    <div class="col-md-6">
+      <label for="permanent_pin" class="form-label"><b>PIN:</b></label>
+      <input
+        type="text"
+        class="form-control w-75"
+        id="permanent_pin"
+        name="permanent_pin"
+        required
+        placeholder="Enter PIN"
+      />
+    </div>
+  </div>
+
+</fieldset>

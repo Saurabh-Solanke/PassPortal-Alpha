@@ -1,1 +1,125 @@
-<p>payment works!</p>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h5>Payment</h5>
+
+      <div class="mb-3">
+        <label for="payment_option" class="form-label"
+          >Select Payment Option</label
+        >
+        <select
+          id="payment_option"
+          name="payment_option"
+          class="form-select w-50"
+          onchange="showPaymentFields()"
+        >
+          <option value="card">Pay with Card</option>
+          <option value="upi">Pay with UPI</option>
+          <option value="netbanking">Pay with NetBanking</option>
+        </select>
+      </div>
+      <!-- Card Payment Fields -->
+      <div id="cardPayment" class="paymentFields">
+        <div class="mb-3">
+          <label for="card_number" class="form-label">Card Number</label>
+          <input
+            type="text"
+            id="card_number"
+            name="card_number"
+            class="form-control w-50"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="expiry_date" class="form-label">Expiry Date</label>
+          <input
+            type="text"
+            id="expiry_date"
+            name="expiry_date"
+            class="form-control w-50"
+            placeholder="MM/YYYY"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="cvv" class="form-label">CVV</label>
+          <input
+            type="number"
+            id="cvv"
+            name="cvv"
+            class="form-control w-50"
+            min="100"
+            max="999"
+            required
+          />
+        </div>
+      </div>
+      <!-- UPI Payment Fields -->
+      <div id="upiPayment" class="paymentFields d-none">
+        <div class="mb-3">
+          <label for="upi_id" class="form-label">UPI ID</label>
+          <input
+            type="text"
+            id="upi_id"
+            name="upi_id"
+            class="form-control w-50"
+            required
+          />
+        </div>
+      </div>
+      <!-- NetBanking Payment Fields -->
+      <div id="netbankingPayment" class="paymentFields d-none">
+        <div class="mb-3">
+          <label for="account_holder_name" class="form-label"
+            >Account Holder Name</label
+          >
+          <input
+            type="text"
+            id="account_holder_name"
+            name="account_holder_name"
+            class="form-control w-50"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="account_number" class="form-label">Account Number</label>
+          <input
+            type="number"
+            id="account_number"
+            name="account_number"
+            class="form-control w-50"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="ifsc_code" class="form-label">IFSC Code</label>
+          <input
+            type="text"
+            id="ifsc_code"
+            name="ifsc_code"
+            class="form-control w-50"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="pin" class="form-label">PIN</label>
+          <input
+            type="password"
+            id="pin"
+            name="pin"
+            class="form-control w-50"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="amount" class="form-label"
+          >Amount:
+          <span style="color: #38b03c; font-weight: bold"
+            >₹ Using Js Depending on option selected</span
+          ></label
+        >
+      </div>
+    </div>
+  </div>
+</div>

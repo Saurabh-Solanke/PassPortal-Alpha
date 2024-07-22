@@ -1,1 +1,59 @@
-<p>service-required works!</p>
+<fieldset class="p-3">
+  <legend><b>Service Required</b></legend>
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <label class="form-label"><b>Type of Application:</b></label>
+      <div class="d-flex mb-2">
+        <div class="form-check me-3">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="application_type"
+            id="normal"
+            value="normal"
+          />
+          <label class="form-check-label" for="normal">Normal</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="application_type"
+            id="tatkaal"
+            value="tatkaal"
+          />
+          <label class="form-check-label" for="tatkaal">Tatkaal</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="passport_booklet_type" class="form-label"
+      ><b>Type of Passport Booklet:</b></label
+    >
+    <select
+      class="form-select w-25"
+      id="passport_booklet_type"
+      name="passport_booklet_type"
+    >
+      <option value="36_pages">36 Pages</option>
+      <option value="60_pages">60 Pages</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="validity_required " class="form-label"
+      ><b>Validity Required:</b></label
+    >
+    <select
+      class="form-select w-25"
+      id="validity_required"
+      name="validity_required"
+    >
+      <option value="10_years">10 Years</option>
+      <option value="up_to_age_18">
+        Up to age 18 (For minors between 15 and 18 years)
+      </option>
+    </select>
+  </div>
+ 
+</fieldset>
