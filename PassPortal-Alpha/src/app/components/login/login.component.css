@@ -167,3 +167,8 @@ form i {
 
   transition: all 0.3s ease-in-out;
 }
+.my-body{
+  background: linear-gradient(135deg, #4a154b 0%, #763459 30%, #a25166 40%, #cb6d73 60%, #df6404 100%);
+
+
+}
