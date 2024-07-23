@@ -141,17 +141,17 @@ form i {
   border-color: var(--color-secondary);
   color: var(--color-secondary);
 }
-
 .btn-prev {
-  background-color: white;
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-}
-
-.btn-prev:hover {
+    
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: white;
+}
+
+.btn-prev:hover {
+  background-color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .c1 {
