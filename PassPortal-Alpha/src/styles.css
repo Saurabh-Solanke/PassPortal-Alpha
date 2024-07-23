@@ -4,7 +4,12 @@
   --color-background: #ffe1cc;
   --color-support1: #faf2f2;
 }
-
+.c1 {
+  --color-primary: #4a154b;
+}
+.c2{
+  --color-secondary: #df6404;
+}
 .content {
   padding-top: 0px; /* Adjust this based on the height of your navbar */
 }
@@ -14,8 +19,14 @@
   margin-left: 0.3em;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .btn {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
@@ -34,4 +45,42 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   font-weight: bold;
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
+}
+
+.my-btn {
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-btn:hover {
+  border-width: 1px;
+  font-weight: bold;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-nxt {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-nxt:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn-prev {
+  background-color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-prev:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
 }

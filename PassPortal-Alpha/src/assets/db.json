@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "Pass@123",
+      "phone": "7788778877",
+      "role": "Admin",
+      "accountStatus": "Active"
+    },
+    {
+      "id": "1b3b",
+      "name": "Saurabh Solanke",
+      "email": "saurabhsolanke07@gmail.com",
+      "password": "Pass@123",
+      "phone": "7894561230",
+      "role": "Client",
+      "accountStatus": "Active"
+    },
+    {
+      "id": "c32a",
+      "name": "Pradeep Singh",
+      "email": "pradeep@gmail.com",
+      "password": "Pass@123",
+      "phone": "9632587410",
+      "role": "Client",
+      "accountStatus": "Active"
+    },
+    {
+      "id": "47c9",
+      "name": "Atharva Ghulane",
+      "email": "atharva@gmail.com",
+      "password": "Pass@123",
+      "phone": "7845123690",
+      "role": "Client",
+      "accountStatus": "Disabled"
+    }
+  ]
+}

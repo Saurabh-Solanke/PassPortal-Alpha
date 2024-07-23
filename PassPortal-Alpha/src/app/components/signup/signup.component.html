@@ -1,1 +1,219 @@
-<p>signup works!</p>
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      <div class="card my-5">
+        <div class="card-body">
+          <div>
+            <h4 class="card-title text-center fs-3 fw-bold mb-3 c1">
+              Signup / Register
+            </h4>
+          </div>
+
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div *ngIf="errorMessage" class="alert alert-danger">
+              {{ errorMessage }}
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="name" class="c2">Name</label>
+              <input
+                type="text"
+                id="name"
+                formControlName="name"
+                class="form-control"
+                placeholder="Please enter your full name here"
+                [class.is-invalid]="
+                  signupForm.get('name')?.invalid &&
+                  (signupForm.get('name')?.touched ||
+                    signupForm.get('name')?.dirty)
+                "
+              />
+              <div
+                *ngIf="
+                  signupForm.get('name')?.invalid &&
+                  (signupForm.get('name')?.touched ||
+                    signupForm.get('name')?.dirty)
+                "
+                class="invalid-feedback"
+              >
+                <span *ngIf="signupForm.get('name')?.errors?.['required']"
+                  >Name is required.</span
+                >
+                <span *ngIf="signupForm.get('name')?.errors?.['pattern']"
+                  >Please enter a valid name (only letters and spaces).</span
+                >
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="email" class="c2">Email</label>
+              <input
+                type="email"
+                id="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Please enter your email here"
+                [class.is-invalid]="
+                  signupForm.get('email')?.invalid &&
+                  (signupForm.get('email')?.touched ||
+                    signupForm.get('email')?.dirty)
+                "
+              />
+              <div
+                *ngIf="
+                  signupForm.get('email')?.invalid &&
+                  (signupForm.get('email')?.touched ||
+                    signupForm.get('email')?.dirty)
+                "
+                class="invalid-feedback"
+              >
+                <span *ngIf="signupForm.get('email')?.errors?.['required']"
+                  >Email is required.</span
+                >
+                <span *ngIf="signupForm.get('email')?.errors?.['email']"
+                  >Please enter a valid email address.</span
+                >
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="password" class="c2">Password</label>
+              <input
+                type="password"
+                id="password"
+                formControlName="password"
+                class="form-control"
+                placeholder="Please enter a strong password"
+                [class.is-invalid]="
+                  signupForm.get('password')?.invalid &&
+                  (signupForm.get('password')?.touched ||
+                    signupForm.get('password')?.dirty)
+                "
+              />
+              <div
+                *ngIf="
+                  signupForm.get('password')?.invalid &&
+                  (signupForm.get('password')?.touched ||
+                    signupForm.get('password')?.dirty)
+                "
+                class="invalid-feedback"
+              >
+                <span *ngIf="signupForm.get('password')?.errors?.['required']"
+                  >Password is required.</span
+                >
+                <span *ngIf="signupForm.get('password')?.errors?.['minlength']"
+                  >Password must be at least 8 characters long.</span
+                >
+                <span
+                  *ngIf="signupForm.get('password')?.errors?.['pattern'] && !signupForm.get('password')?.errors?.['minlength']"
+                  >Password must contain at least:</span
+                >
+                <ul
+                  *ngIf="signupForm.get('password')?.errors?.['pattern'] && !signupForm.get('password')?.errors?.['minlength']"
+                >
+                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
+                    1 uppercase letter
+                  </li>
+                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
+                    1 lowercase letter
+                  </li>
+                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
+                    1 number
+                  </li>
+                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
+                    1 special character
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="confirmPassword" class="c2">Confirm Password</label>
+              <input
+                type="password"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                class="form-control"
+                placeholder="Please re-enter the same password as above"
+                [class.is-invalid]="
+                  signupForm.get('confirmPassword')?.invalid &&
+                  (signupForm.get('confirmPassword')?.touched ||
+                    signupForm.get('confirmPassword')?.dirty)
+                "
+              />
+              <div
+                *ngIf="
+                  signupForm.get('confirmPassword')?.invalid &&
+                  (signupForm.get('confirmPassword')?.touched ||
+                    signupForm.get('confirmPassword')?.dirty)
+                "
+                class="invalid-feedback"
+              >
+                <span
+                  *ngIf="signupForm.get('confirmPassword')?.errors?.['required']"
+                  >Please confirm your password.</span
+                >
+                <span *ngIf="signupForm.hasError('mismatch')"
+                  >Passwords must match.</span
+                >
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="phone" class="c2">Contact no</label>
+              <input
+                type="text"
+                id="phone"
+                formControlName="phone"
+                class="form-control"
+                placeholder="Please enter your mobile no here"
+                pattern="[0-9]*"
+                inputmode="numeric"
+                [class.is-invalid]="
+                  signupForm.get('phone')?.invalid &&
+                  (signupForm.get('phone')?.touched ||
+                    signupForm.get('phone')?.dirty)
+                "
+              />
+              <div
+                *ngIf="
+                  signupForm.get('phone')?.invalid &&
+                  (signupForm.get('phone')?.touched ||
+                    signupForm.get('phone')?.dirty)
+                "
+                class="invalid-feedback"
+              >
+                <span *ngIf="signupForm.get('phone')?.errors?.['required']"
+                  >Phone number is required.</span
+                >
+                <span *ngIf="signupForm.get('phone')?.errors?.['pattern']"
+                  >Please enter a valid 10-digit phone number</span
+                >
+              </div>
+            </div>
+
+            <div class="d-grid mt-3">
+              <button type="submit" class="btn btn-nxt w-50 ms-auto">
+                Create Account
+              </button>
+            </div>
+
+            <div class="text-center mt-3">
+              Already have an account?
+              <a  class="c2" (click)="redirectToLogin()">
+                Login
+              </a>
+            </div>
+          </form>
+
+          <p class="mt-4 text-muted text-center">
+            By Signing up, you agree to our
+            <a href="javascript:" class="c2">Terms of Service</a>
+            and
+            <a href="javascript:" class="c2">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
