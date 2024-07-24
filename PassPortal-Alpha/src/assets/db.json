@@ -62,6 +62,32 @@
       "phone": "9638527410",
       "role": "Client",
       "accountStatus": "Active"
+    },
+    {
+      "id": "1e07",
+      "name": "Shimmy ",
+      "email": "Shimyyao@gmail.com",
+      "password": "Pass@123",
+      "phone": "7410852010",
+      "role": "Client",
+      "accountStatus": "Active"
+    },
+    {
+      "id": "bfab",
+      "name": "Vinod Patil",
+      "email": "vinod@gmail.com",
+      "password": "Pass@123",
+      "phone": "8520852085",
+      "role": "Client",
+      "accountStatus": "Active"
+    },
+    {
+      "id": "f1e4",
+      "name": "prada",
+      "password": "Pass@123",
+      "phone": "8757812458",
+      "role": "Client",
+      "accountStatus": "Active"
     }
   ]
 }
