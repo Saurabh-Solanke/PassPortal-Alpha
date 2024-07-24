@@ -35,6 +35,15 @@
       "phone": "7845123690",
       "role": "Client",
       "accountStatus": "Disabled"
+    },
+    {
+      "id": "d13a",
+      "name": "Anurag M",
+      "email": "am@gmail.com",
+      "password": "Pass@123",
+      "phone": "7410852063",
+      "role": "Client",
+      "accountStatus": "Active"
     }
   ]
 }

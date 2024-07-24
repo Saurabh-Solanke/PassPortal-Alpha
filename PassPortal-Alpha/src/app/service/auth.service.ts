@@ -49,9 +49,7 @@ export class AuthService {
     console.error(`${operation} failed: ${error.message}`);
     Swal.fire(
       'Error',
-      `${operation.charAt(0).toUpperCase() + operation.slice(1)} failed: ${
-        error.message
-      }`,
+      `${operation.charAt(0).toUpperCase() + operation.slice(1)} failed: Failed to connect to the server.`,
       'error'
     );
     return of(null);
