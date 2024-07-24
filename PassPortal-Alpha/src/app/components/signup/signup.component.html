@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row align-items-center vh-100">
-    <div class="col-md-6 d-none d-md-flex justify-content-center ">
+    <div class="col-md-6 d-md-flex justify-content-center">
       <img
         src="../../../assets/images/Signup.gif"
         alt="Illustration"
@@ -109,28 +109,17 @@
                   >Password is required.</span
                 >
                 <span *ngIf="signupForm.get('password')?.errors?.['minlength']"
-                  >Password must be at least 8 characters long.</span
+                  >Password must be at least 8 characters long. <br></span
                 >
-                <span
-                  *ngIf="signupForm.get('password')?.errors?.['pattern'] && !signupForm.get('password')?.errors?.['minlength']"
-                  >Password must contain at least:</span
-                >
-                <ul
-                  *ngIf="signupForm.get('password')?.errors?.['pattern'] && !signupForm.get('password')?.errors?.['minlength']"
-                >
-                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
-                    1 uppercase letter
-                  </li>
-                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
-                    1 lowercase letter
-                  </li>
-                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
-                    1 number
-                  </li>
-                  <li *ngIf="signupForm.get('password')?.errors?.['pattern']">
-                    1 special character
-                  </li>
-                </ul>
+                <span *ngIf="signupForm.get('password')?.errors?.['pattern']">
+                  <span>Password must contain at least:</span>
+                  <ul>
+                    <li *ngIf="passwordErrors.uppercase">1 uppercase letter</li>
+                    <li *ngIf="passwordErrors.lowercase">1 lowercase letter</li>
+                    <li *ngIf="passwordErrors.number">1 number</li>
+                    <li *ngIf="passwordErrors.special">1 special character</li>
+                  </ul>
+                </span>
               </div>
             </div>
 
@@ -142,6 +131,9 @@
                 formControlName="confirmPassword"
                 class="form-control"
                 placeholder="Please re-enter the same password as above"
+                (blur)="
+                  signupForm.get('confirmPassword')!.updateValueAndValidity()
+                "
                 [class.is-invalid]="
                   signupForm.get('confirmPassword')?.invalid &&
                   (signupForm.get('confirmPassword')?.touched ||

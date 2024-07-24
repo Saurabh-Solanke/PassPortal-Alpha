@@ -1,5 +1,3 @@
-
-
 .my-btn {
   color: white;
   cursor: pointer;
@@ -45,14 +43,13 @@
 }
 .card {
   background-color: white;
-  border-color:var(--color-secondary) ;
+  border-color: var(--color-secondary);
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--color-primary);
   padding: 16px;
   margin: 16px;
   transition: box-shadow 0.3s ease-in-out;
 }
-
 
 @keyframes fadeInRight {
   from {
@@ -75,9 +72,6 @@
   }
 }
 @media (min-width: 768px) {
-  /* Hover animation */
-
-
   .hover-animate:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px var(--color-primary);

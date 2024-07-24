@@ -44,6 +44,15 @@
       "phone": "7410852063",
       "role": "Client",
       "accountStatus": "Active"
+    },
+    {
+      "id": "6834",
+      "name": "Bhanu R",
+      "email": "bhanu@gmail.com",
+      "password": "Pass@123",
+      "phone": "8520852020",
+      "role": "Client",
+      "accountStatus": "Active"
     }
   ]
 }

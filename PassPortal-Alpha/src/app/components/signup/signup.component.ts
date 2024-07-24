@@ -1,16 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { Router, RouterOutlet } from '@angular/router';
+import { FormBuilder, FormGroup, Validators, ValidationErrors, ValidatorFn, AbstractControl, ReactiveFormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
+import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -18,13 +12,12 @@ import Swal from 'sweetalert2';
   imports: [
     ReactiveFormsModule,
     CommonModule,
-    RouterOutlet,
     HttpClientModule,
-    RouterModule,
+    RouterModule
   ],
-  providers: [AuthService],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
+  providers: [AuthService]
 })
 export class SignupComponent {
   signupForm: FormGroup;
@@ -35,34 +28,48 @@ export class SignupComponent {
     private authService: AuthService,
     private router: Router
   ) {
-    this.signupForm = this.fb.group(
-      {
-        name: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
-        email: ['', [Validators.required, Validators.email]],
-        password: [
-          '',
-          [
-            Validators.required,
-            Validators.minLength(8),
-            Validators.pattern(/[A-Z]/), // Uppercase letter
-            Validators.pattern(/[a-z]/), // Lowercase letter
-            Validators.pattern(/[0-9]/), // Number
-            Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/), // Special character
-          ],
+    this.signupForm = this.fb.group({
+      name: ['', [Validators.required, Validators.pattern('^[a-zA-Z ]*$')]],
+      email: ['', [Validators.required, Validators.email]],
+      password: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.pattern(/[A-Z]/), // Uppercase letter
+          Validators.pattern(/[a-z]/), // Lowercase letter
+          Validators.pattern(/[0-9]/), // Number
+          Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/), // Special character
         ],
-        confirmPassword: ['', Validators.required],
-        phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
-        role: ['Client'],
-        accountStatus: ['Active'],
-      },
-      { validator: this.passwordMatchValidator }
-    );
+      ],
+      confirmPassword: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
+      role: ['Client'],
+      accountStatus: ['Active'],
+    }, { validators: this.passwordMatchValidator });
   }
 
-  passwordMatchValidator(form: FormGroup) {
-    return form.get('password')?.value === form.get('confirmPassword')?.value
-      ? null
-      : { mismatch: true };
+  passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
+    const formGroup = control as FormGroup;
+    const password = formGroup.get('password')?.value;
+    const confirmPassword = formGroup.get('confirmPassword')?.value;
+    return password === confirmPassword ? null : { mismatch: true };
+  }
+
+  get password() {
+    return this.signupForm.get('password');
+  }
+
+  get passwordErrors() {
+    const errors = this.password?.errors || {};
+    return {
+      required: errors['required'],
+      minlength: errors['minlength'],
+      uppercase: !/[A-Z]/.test(this.password?.value || ''),
+      lowercase: !/[a-z]/.test(this.password?.value || ''),
+      number: !/[0-9]/.test(this.password?.value || ''),
+      special: !/[!@#$%^&*(),.?":{}|<>]/.test(this.password?.value || ''),
+    };
   }
 
   onSubmit() {
