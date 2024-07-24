@@ -56,7 +56,7 @@ export class LoginComponent {
       this.authService.login(this.loginForm.value).subscribe(
         (res: any) => {
           if (res.password === this.loginForm.value.password) {
-            Swal.fire('Success', 'Login successful!', 'success');
+            // Swal.fire('Success', 'Login successful!', 'success');
             sessionStorage.setItem('loggedInUser', res.name);
             this.router.navigate(['/user-home'], {
               state: { username: res.name },

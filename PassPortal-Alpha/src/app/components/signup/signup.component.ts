@@ -78,23 +78,29 @@ export class SignupComponent {
   onSubmit() {
     if (this.signupForm.valid) {
       const { email, confirmPassword, ...user } = this.signupForm.value;
-      
+
       console.log('Form is valid. Checking if email exists...');
       this.authService.emailExists(email).subscribe(
         (emailExists) => {
           console.log(`Email exists: ${emailExists}`);
           if (emailExists) {
-            Swal.fire('Warning', 'Email already exists. Please go to the login page to login.', 'warning');
+            Swal.fire(
+              'Warning',
+              'Email already exists. Please go to the login page to login.',
+              'warning'
+            );
           } else {
             console.log('Email does not exist. Proceeding with signup...');
             this.authService.signup(user).subscribe(
               (response) => {
                 console.log('Signup successful.');
-                Swal.fire('Success', 'Signup successful!', 'success').then(() => {
-                  setTimeout(() => {
-                    this.router.navigate(['/']);
-                  }, 100);
-                });
+                Swal.fire('Success', 'Signup successful!', 'success').then(
+                  () => {
+                    setTimeout(() => {
+                      this.router.navigate(['/']);
+                    }, 100);
+                  }
+                );
               },
               (error) => {
                 console.log('Signup failed.');
@@ -105,16 +111,20 @@ export class SignupComponent {
         },
         (error) => {
           console.log('Failed to check email.');
-          Swal.fire('Error', 'Failed to check email. Please try again.', 'error');
+          Swal.fire(
+            'Error',
+            'Failed to check email. Please try again.',
+            'error'
+          );
         }
       );
     } else {
       console.log('Form is invalid.');
-      Swal.fire('Error', 'Please fill all the fields correctly.', 'error');
+      // Swal.fire('Error', 'Please fill all the fields correctly.', 'error');
+      this.signupForm.markAllAsTouched();
     }
   }
-  
-  
+
   redirectToLogin() {
     this.router.navigate(['/login']);
   }
