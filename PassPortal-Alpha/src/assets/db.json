@@ -53,6 +53,15 @@
       "phone": "8520852020",
       "role": "Client",
       "accountStatus": "Active"
+    },
+    {
+      "id": "647f",
+      "name": "Smita Solanke",
+      "email": "smitasolanke07@gmail.com",
+      "password": "Pass@123",
+      "phone": "9638527410",
+      "role": "Client",
+      "accountStatus": "Active"
     }
   ]
 }

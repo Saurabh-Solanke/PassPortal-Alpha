@@ -43,12 +43,12 @@
                 "
                 class="invalid-feedback"
               >
-                <span *ngIf="signupForm.get('name')?.errors?.['required']"
-                  >Name is required.</span
-                >
-                <span *ngIf="signupForm.get('name')?.errors?.['pattern']"
-                  >Please enter a valid name (only letters and spaces).</span
-                >
+                <span *ngIf="signupForm.get('name')?.errors?.['required']">
+                  Name is required.
+                </span>
+                <span *ngIf="signupForm.get('name')?.errors?.['pattern']">
+                  Please enter a valid name (only letters and spaces).
+                </span>
               </div>
             </div>
 
@@ -74,12 +74,12 @@
                 "
                 class="invalid-feedback"
               >
-                <span *ngIf="signupForm.get('email')?.errors?.['required']"
-                  >Email is required.</span
-                >
-                <span *ngIf="signupForm.get('email')?.errors?.['email']"
-                  >Please enter a valid email address.</span
-                >
+                <span *ngIf="signupForm.get('email')?.errors?.['required']">
+                  Email is required.
+                </span>
+                <span *ngIf="signupForm.get('email')?.errors?.['email']">
+                  Please enter a valid email address.
+                </span>
               </div>
             </div>
 
@@ -105,12 +105,12 @@
                 "
                 class="invalid-feedback"
               >
-                <span *ngIf="signupForm.get('password')?.errors?.['required']"
-                  >Password is required.</span
-                >
-                <span *ngIf="signupForm.get('password')?.errors?.['minlength']"
-                  >Password must be at least 8 characters long. <br></span
-                >
+                <span *ngIf="signupForm.get('password')?.errors?.['required']">
+                  Password is required.
+                </span>
+                <span *ngIf="signupForm.get('password')?.errors?.['minlength']">
+                  Password must be at least 8 characters long.
+                </span>
                 <span *ngIf="signupForm.get('password')?.errors?.['pattern']">
                   <span>Password must contain at least:</span>
                   <ul>
@@ -131,9 +131,6 @@
                 formControlName="confirmPassword"
                 class="form-control"
                 placeholder="Please re-enter the same password as above"
-                (blur)="
-                  signupForm.get('confirmPassword')!.updateValueAndValidity()
-                "
                 [class.is-invalid]="
                   signupForm.get('confirmPassword')?.invalid &&
                   (signupForm.get('confirmPassword')?.touched ||
@@ -150,11 +147,17 @@
               >
                 <span
                   *ngIf="signupForm.get('confirmPassword')?.errors?.['required']"
-                  >Please confirm your password.</span
                 >
-                <span *ngIf="signupForm.hasError('mismatch')"
-                  >Passwords must match.</span
+                  Confirm Password is required.
+                </span>
+                <span
+                  *ngIf="
+                    signupForm.get('confirmPassword')?.touched &&
+                    signupForm.get('confirmPassword')?.errors?.['passwordMismatch']
+                  "
                 >
+                  Passwords do not match.
+                </span>
               </div>
             </div>
 
@@ -182,12 +185,12 @@
                 "
                 class="invalid-feedback"
               >
-                <span *ngIf="signupForm.get('phone')?.errors?.['required']"
-                  >Phone number is required.</span
-                >
-                <span *ngIf="signupForm.get('phone')?.errors?.['pattern']"
-                  >Please enter a valid 10-digit phone number</span
-                >
+                <span *ngIf="signupForm.get('phone')?.errors?.['required']">
+                  Phone number is required.
+                </span>
+                <span *ngIf="signupForm.get('phone')?.errors?.['pattern']">
+                  Please enter a valid 10-digit phone number.
+                </span>
               </div>
             </div>
 

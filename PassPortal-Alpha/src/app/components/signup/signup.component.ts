@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ValidationErrors, ValidatorFn, AbstractControl, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ValidationErrors,
+  AbstractControl,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../service/auth.service';
 import Swal from 'sweetalert2';
@@ -9,15 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    HttpClientModule,
-    RouterModule
-  ],
+  imports: [ReactiveFormsModule, CommonModule, HttpClientModule, RouterModule],
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'],
-  providers: [AuthService]
+  providers: [AuthService],
 })
 export class SignupComponent {
   signupForm: FormGroup;
@@ -42,19 +44,20 @@ export class SignupComponent {
           Validators.pattern(/[!@#$%^&*(),.?":{}|<>]/), // Special character
         ],
       ],
-      confirmPassword: ['', Validators.required],
+      confirmPassword: ['', [Validators.required, this.matchPasswordValidator]],
       phone: ['', [Validators.required, Validators.pattern('^[0-9]{10}$')]],
       role: ['Client'],
       accountStatus: ['Active'],
-    }, { validators: this.passwordMatchValidator });
+    });
   }
 
-  passwordMatchValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
-    const formGroup = control as FormGroup;
-    const password = formGroup.get('password')?.value;
-    const confirmPassword = formGroup.get('confirmPassword')?.value;
-    return password === confirmPassword ? null : { mismatch: true };
-  }
+  matchPasswordValidator = (
+    control: AbstractControl
+  ): ValidationErrors | null => {
+    const password = this.signupForm?.get('password')?.value;
+    const confirmPassword = control.value;
+    return password === confirmPassword ? null : { passwordMismatch: true };
+  };
 
   get password() {
     return this.signupForm.get('password');
