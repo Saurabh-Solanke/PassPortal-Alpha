@@ -1,0 +1,40 @@
+:root {
+    --color-primary: #4a154b;
+    --color-secondary: #df6404;
+    --color-background: #ffe1cc;
+    --color-support1: #faf2f2;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: var(--color-primary);
+  }
+  
+  legend {
+    color: var(--color-secondary);
+  }
+  
+  .form-label {
+    color: var(--color-primary);
+  }
+  
+  .form-control,
+  .form-select,
+  .form-check-input {
+    border-color: var(--color-primary);
+  }
+  
+  .form-control:focus,
+  .form-select:focus,
+  .form-check-input:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 5px var(--color-secondary);
+  }
+  
+  fieldset {
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    margin-bottom: 1%;
+  }
+  
