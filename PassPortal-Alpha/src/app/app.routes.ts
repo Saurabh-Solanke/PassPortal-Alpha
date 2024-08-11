@@ -27,14 +27,46 @@ export const routes: Routes = [
     data: { breadcrumb: 'Home' },
   },
   //remove later
-  { path: 'form1', component: ServiceRequiredComponent, data: { breadcrumb: 'Service Required' } },
-  { path: 'form2', component: ApplicantDetailsComponent, data: { breadcrumb: 'Applicant Details' } },
-  { path: 'form3', component: FamilyDetailsComponent, data: { breadcrumb: 'Family Details' } },
-  { path: 'form4', component: AddressDetailsComponent, data: { breadcrumb: 'Address Details' } },
-  { path: 'form5', component: EmergencyContactComponent, data: { breadcrumb: 'Emergency Contact' } },
-  { path: 'form6', component: OtherDetailsComponent, data: { breadcrumb: 'Other Details' } },
-  { path: 'form7', component: SelfDeclarationComponent, data: { breadcrumb: 'Self Declaration' } },
-  { path: 'form8', component: PaymentComponent, data: { breadcrumb: 'Payment' } },
+  {
+    path: 'form1',
+    component: ServiceRequiredComponent,
+    data: { breadcrumb: 'Service Required' },
+  },
+  {
+    path: 'form2',
+    component: ApplicantDetailsComponent,
+    data: { breadcrumb: 'Applicant Details' },
+  },
+  {
+    path: 'form3',
+    component: FamilyDetailsComponent,
+    data: { breadcrumb: 'Family Details' },
+  },
+  {
+    path: 'form4',
+    component: AddressDetailsComponent,
+    data: { breadcrumb: 'Address Details' },
+  },
+  {
+    path: 'form5',
+    component: EmergencyContactComponent,
+    data: { breadcrumb: 'Emergency Contact' },
+  },
+  {
+    path: 'form6',
+    component: OtherDetailsComponent,
+    data: { breadcrumb: 'Other Details' },
+  },
+  {
+    path: 'form7',
+    component: SelfDeclarationComponent,
+    data: { breadcrumb: 'Self Declaration' },
+  },
+  {
+    path: 'form8',
+    component: PaymentComponent,
+    data: { breadcrumb: 'Payment' },
+  },
   //
   {
     path: '**',
