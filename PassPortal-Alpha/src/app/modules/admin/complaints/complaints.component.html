@@ -3,6 +3,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th>Complaint ID</th>
         <th>Email</th>
         <th>Subject</th>
         <th>Date & Time</th>
@@ -12,6 +13,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let complaint of complaints$ | async">
+        <td>{{ complaint.id }}</td>
         <td>{{ complaint.email }}</td>
         <td>{{ complaint.subject }}</td>
         <td>{{ complaint.dateTime | date : "short" }}</td>
@@ -42,7 +44,7 @@
       <li class="page-item">
         <button
           class="page-link"
-          (click)="page > 1 && (page = page - 1); loadComplaints()"
+          (click)="previousPage()"
           [disabled]="page === 1"
         >
           Previous
@@ -51,7 +53,7 @@
       <li class="page-item">
         <button
           class="page-link"
-          (click)="page = page + 1; loadComplaints()"
+          (click)="nextPage()"
           [disabled]="page * pageSize >= totalComplaints"
         >
           Next
