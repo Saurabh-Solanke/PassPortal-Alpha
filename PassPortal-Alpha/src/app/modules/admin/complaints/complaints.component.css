@@ -1,32 +1,49 @@
-.table {
-  margin-top: 20px;
-}
-
-.btn-primary {
-  background-color: #4a154b;
-  border-color: #4a154b;
-}
-
-.btn-primary:hover {
-  background-color: #df6404;
-  border-color: #df6404;
-}
-
-.btn-secondary {
-  background-color: #f4f4f4;
-  border-color: #ddd;
-}
-
-.btn-secondary:disabled {
-  background-color: #ddd;
-  border-color: #ddd;
-}
-
 .modal-header {
-  background-color: #4a154b;
+  background-color: var(--color-primary);
   color: white;
 }
 
 .modal-footer {
   background-color: #f4f4f4;
 }
+
+th,
+th button.btn-sort {
+  background-color: var(--color-primary);
+  color: white;
+  text-align: center;
+  align-items: baseline;
+}
+
+h2 {
+  color: var(--color-secondary);
+}
+.btn-review {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-review:hover {
+  background-color: white;
+  border-width: 1px;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+
+  scale: 1;
+}
+.table {
+  text-align: center;
+}
+
+.btn-nxt {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-nxt:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+

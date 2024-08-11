@@ -18,6 +18,8 @@ export class ComplaintsComponent implements OnInit {
   page = 1;
   pageSize = 6; // Show 6 entries per page
   totalComplaints = 0;
+  sortOrder: 'asc' | 'desc' = 'desc'; // Sorting order
+  filterCriteria = 'all';
 
   constructor(private http: HttpClient, private modalService: NgbModal) {}
 
@@ -28,14 +30,23 @@ export class ComplaintsComponent implements OnInit {
   loadComplaints(): void {
     this.http
       .get<Complaint[]>(
-        'http://localhost:3000/complaints?_sort=dateTime&_order=desc'
+        `http://localhost:3000/complaints?_sort=dateTime&_order=${this.sortOrder}`
       )
       .subscribe((data) => {
-        this.totalComplaints = data.length;
+        const filteredData = this.applyFilterCriteria(data);
+        this.totalComplaints = filteredData.length;
         this.complaints$ = of(
-          data.slice((this.page - 1) * this.pageSize, this.page * this.pageSize)
+          filteredData.slice(
+            (this.page - 1) * this.pageSize,
+            this.page * this.pageSize
+          )
         );
       });
+  }
+
+  toggleSortOrder(): void {
+    this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    this.loadComplaints();
   }
 
   previousPage(): void {
@@ -49,6 +60,46 @@ export class ComplaintsComponent implements OnInit {
     if (this.page * this.pageSize < this.totalComplaints) {
       this.page++;
       this.loadComplaints();
+    }
+  }
+
+  goToPage(pageNumber: number): void {
+    this.page = pageNumber;
+    this.loadComplaints();
+  }
+
+  applyFilter(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    this.filterCriteria = selectElement.value;
+    this.page = 1; // Reset to first page after filter change
+    this.loadComplaints();
+  }
+
+  applyFilterCriteria(data: Complaint[]): Complaint[] {
+    const now = new Date();
+    switch (this.filterCriteria) {
+      case 'thisWeek':
+        return data.filter(
+          (complaint) =>
+            new Date(complaint.dateTime) >
+            new Date(now.setDate(now.getDate() - now.getDay()))
+        );
+      case 'thisMonth':
+        return data.filter(
+          (complaint) =>
+            new Date(complaint.dateTime).getMonth() === now.getMonth()
+        );
+      case 'thisYear':
+        return data.filter(
+          (complaint) =>
+            new Date(complaint.dateTime).getFullYear() === now.getFullYear()
+        );
+      case 'pending':
+        return data.filter((complaint) => complaint.status === 'Pending');
+      case 'resolved':
+        return data.filter((complaint) => complaint.status === 'Resolved');
+      default:
+        return data;
     }
   }
 
@@ -76,5 +127,10 @@ export class ComplaintsComponent implements OnInit {
     if (this.selectedComplaint) {
       console.log(`Sending email to ${this.selectedComplaint.email}`);
     }
+  }
+
+  pageNumbers(): number[] {
+    const totalPages = Math.ceil(this.totalComplaints / this.pageSize);
+    return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 }
