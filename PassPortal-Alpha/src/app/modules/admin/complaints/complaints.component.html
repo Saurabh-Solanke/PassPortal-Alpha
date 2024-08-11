@@ -1,1 +1,103 @@
-<p>complaints works!</p>
+<div class="container">
+  <h2>Complaints</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Date & Time</th>
+        <th>Status</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let complaint of complaints$ | async">
+        <td>{{ complaint.email }}</td>
+        <td>{{ complaint.subject }}</td>
+        <td>{{ complaint.dateTime | date : "short" }}</td>
+        <td>{{ complaint.status }}</td>
+        <td>
+          <button
+            *ngIf="complaint.status === 'Pending'"
+            class="btn btn-primary"
+            (click)="openModal(content, complaint)"
+          >
+            Review
+          </button>
+          <button
+            *ngIf="complaint.status === 'Resolved'"
+            class="btn btn-secondary"
+            disabled
+          >
+            Reviewed
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+      <li class="page-item">
+        <button
+          class="page-link"
+          (click)="page > 1 && (page = page - 1); loadComplaints()"
+          [disabled]="page === 1"
+        >
+          Previous
+        </button>
+      </li>
+      <li class="page-item">
+        <button
+          class="page-link"
+          (click)="page = page + 1; loadComplaints()"
+          [disabled]="page * pageSize >= totalComplaints"
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Modal -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Complaint Details</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <p><strong>Email:</strong> {{ selectedComplaint?.email }}</p>
+      <p><strong>Subject:</strong> {{ selectedComplaint?.subject }}</p>
+      <p>
+        <strong>Date & Time:</strong>
+        {{ selectedComplaint?.dateTime | date : "short" }}
+      </p>
+      <p><strong>Message:</strong> {{ selectedComplaint?.message }}</p>
+    </div>
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="acknowledgeOrResolve()"
+      >
+        Acknowledge/Resolve
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="sendEmail()">
+        Send Email
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('Cross click')"
+      >
+        Close
+      </button>
+    </div>
+  </ng-template>
+</div>

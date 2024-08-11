@@ -26,7 +26,15 @@ export const routes: Routes = [
       import('./components/user/user.routes').then((m) => m.USER_ROUTES),
     data: { breadcrumb: 'Home' },
   },
-  //remove later
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./modules/admin/admin-routing.module').then(
+        (m) => m.AdminRoutingModule
+      ),
+    data: { breadcrumb: 'Admin' },
+  },
+  // Remove later
   {
     path: 'form1',
     component: ServiceRequiredComponent,
@@ -67,7 +75,6 @@ export const routes: Routes = [
     component: PaymentComponent,
     data: { breadcrumb: 'Payment' },
   },
-  //
   {
     path: '**',
     component: PageNotFoundComponent,

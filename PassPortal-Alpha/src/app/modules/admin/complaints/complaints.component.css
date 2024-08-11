@@ -1,0 +1,32 @@
+.table {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #4a154b;
+  border-color: #4a154b;
+}
+
+.btn-primary:hover {
+  background-color: #df6404;
+  border-color: #df6404;
+}
+
+.btn-secondary {
+  background-color: #f4f4f4;
+  border-color: #ddd;
+}
+
+.btn-secondary:disabled {
+  background-color: #ddd;
+  border-color: #ddd;
+}
+
+.modal-header {
+  background-color: #4a154b;
+  color: white;
+}
+
+.modal-footer {
+  background-color: #f4f4f4;
+}
