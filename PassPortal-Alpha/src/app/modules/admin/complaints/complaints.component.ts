@@ -79,22 +79,29 @@ export class ComplaintsComponent implements OnInit {
 
   applyFilterCriteria(data: Complaint[]): Complaint[] {
     const now = new Date();
+    const startOfWeek = new Date(now.setDate(now.getDate() - now.getDay() + 1)); // Start of the week (Monday)
+    const endOfWeek = new Date(now.setDate(now.getDate() - now.getDay() + 7)); // End of the week (Sunday)
+    const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1); // Start of the month
+    const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0); // End of the month
+    const startOfYear = new Date(now.getFullYear(), 0, 1); // Start of the year
+  
     switch (this.filterCriteria) {
       case 'thisWeek':
         return data.filter(
           (complaint) =>
-            new Date(complaint.dateTime) >
-            new Date(now.setDate(now.getDate() - now.getDay()))
+            new Date(complaint.dateTime) >= startOfWeek &&
+            new Date(complaint.dateTime) <= endOfWeek
         );
       case 'thisMonth':
         return data.filter(
           (complaint) =>
-            new Date(complaint.dateTime).getMonth() === now.getMonth()
+            new Date(complaint.dateTime) >= startOfMonth &&
+            new Date(complaint.dateTime) <= endOfMonth
         );
       case 'thisYear':
         return data.filter(
           (complaint) =>
-            new Date(complaint.dateTime).getFullYear() === now.getFullYear()
+            new Date(complaint.dateTime) >= startOfYear
         );
       case 'pending':
         return data.filter((complaint) => complaint.status === 'Pending');
@@ -104,7 +111,7 @@ export class ComplaintsComponent implements OnInit {
         return data;
     }
   }
-
+  
   openModal(content: any, complaint: Complaint): void {
     this.selectedComplaint = complaint;
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
