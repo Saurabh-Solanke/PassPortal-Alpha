@@ -22,8 +22,13 @@
         <th>
           <button class="btn btn-sort" (click)="toggleSortOrder()">
             Date & Time
-            <span *ngIf="sortOrder === 'asc'">&#9650;</span>
-            <span *ngIf="sortOrder === 'desc'">&#9660;</span>
+            <i
+              class="fas"
+              [ngClass]="{
+                'fa-sort-up': sortOrder === 'asc',
+                'fa-sort-down': sortOrder === 'desc'
+              }"
+            ></i>
           </button>
         </th>
         <th>Status</th>
@@ -43,10 +48,10 @@
             class="btn btn-review"
             (click)="openModal(content, complaint)"
           >
-            Review
+            <i class="fas fa-eye"></i> Review
           </button>
           <button *ngIf="complaint.status === 'Resolved'" class="btn" disabled>
-            Reviewed
+            <i class="fas fa-check"></i> Reviewed
           </button>
         </td>
       </tr>
@@ -62,16 +67,19 @@
           (click)="previousPage()"
           [disabled]="page === 1"
         >
-          Previous
+          <i class="fas fa-chevron-left"></i> Previous
         </button>
       </li>
 
       <!-- Page Number Buttons -->
       <li class="page-item" *ngFor="let pageNumber of pageNumbers()">
         <button
-          class="page-link btn btn-nxt mx-1"
+          class="page-link mx-1 rounded-2"
           (click)="goToPage(pageNumber)"
-          [class.active]="page === pageNumber"
+          [ngClass]="{
+            'btn-nxt': page === pageNumber,
+            'btn-pageno': page !== pageNumber
+          }"
         >
           {{ pageNumber }}
         </button>
@@ -83,7 +91,7 @@
           (click)="nextPage()"
           [disabled]="page * pageSize >= totalComplaints"
         >
-          Next
+          <i class="fas fa-chevron-right"></i> Next
         </button>
       </li>
     </ul>
@@ -115,17 +123,17 @@
         class="btn btn-primary"
         (click)="acknowledgeOrResolve()"
       >
-        Acknowledge/Resolve
+        <i class="fas fa-check-circle"></i> Acknowledge/Resolve
       </button>
       <button type="button" class="btn btn-secondary" (click)="sendEmail()">
-        Send Email
+        <i class="fas fa-envelope"></i> Send Email
       </button>
       <button
         type="button"
         class="btn btn-secondary"
         (click)="modal.dismiss('Cross click')"
       >
-        Close
+        <i class="fas fa-times"></i> Close
       </button>
     </div>
   </ng-template>

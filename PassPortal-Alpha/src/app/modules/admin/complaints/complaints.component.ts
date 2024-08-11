@@ -64,8 +64,10 @@ export class ComplaintsComponent implements OnInit {
   }
 
   goToPage(pageNumber: number): void {
-    this.page = pageNumber;
-    this.loadComplaints();
+    if (pageNumber > 0 && pageNumber <= this.totalPages()) {
+      this.page = pageNumber;
+      this.loadComplaints();
+    }
   }
 
   applyFilter(event: Event): void {
@@ -129,8 +131,16 @@ export class ComplaintsComponent implements OnInit {
     }
   }
 
+  totalPages(): number {
+    return Math.ceil(this.totalComplaints / this.pageSize);
+  }
+
   pageNumbers(): number[] {
-    const totalPages = Math.ceil(this.totalComplaints / this.pageSize);
-    return Array.from({ length: totalPages }, (_, i) => i + 1);
+    const totalPages = this.totalPages();
+    const pageNumbers = [];
+    for (let i = 1; i <= totalPages; i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers;
   }
 }

@@ -41,9 +41,16 @@ h2 {
   color: white;
 }
 
-.btn-nxt:hover {
+.btn-nxt:hover,
+.btn-pageno {
   background-color: white;
   border-color: var(--color-secondary);
   color: var(--color-secondary);
 }
 
+.btn-nxt:disabled{
+  background-color: white;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+  opacity: 0.6  ;
+}
