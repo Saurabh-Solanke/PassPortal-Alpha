@@ -42,7 +42,7 @@ body {
   border-color: var(--color-secondary);
   border-width: 1px;
   color: var(--color-secondary);
-  font-weight: bold;
+  /* font-weight: bold; */
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }

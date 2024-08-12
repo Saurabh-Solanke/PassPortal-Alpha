@@ -1,1 +1,91 @@
-<p>user-list works!</p>
+<div class="container-fluid mb-0">
+    <h2 class="fw-bold mb-0">Users List</h2>
+  
+    <!-- Filter Section -->
+    <div class="filter-section mt-0 mb-3 col-2 ms-auto">
+      <select class="form-select" (change)="applyFilter($event)">
+        <option value="all">All</option>
+        <option value="active">Active</option>
+        <option value="disabled">Disabled</option>
+      </select>
+    </div>
+  
+    <!-- Users Table -->
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Sr No.</th>
+          <th>User ID</th>
+          <th>Email</th>
+          <th>Contact No.</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of displayedUsers; let i = index">
+          <td>{{ (page - 1) * pageSize + i + 1 }}</td>
+          <td>{{ user.id }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.accountStatus }}</td>
+          <td>
+            <button
+              *ngIf="user.accountStatus === 'Active'"
+              class="btn btn-prev"
+              (click)="changeStatus(user, 'Disabled')"
+            >
+              Disable
+            </button>
+            <button
+              *ngIf="user.accountStatus === 'Disabled'"
+              class="btn btn-nxt"
+              (click)="changeStatus(user, 'Active')"
+            >
+              Enable
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center mt-4">
+        <li class="page-item">
+          <button
+            class="page-link btn btn-nxtpage mx-1"
+            (click)="previousPage()"
+            [disabled]="page === 1"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </li>
+  
+        <!-- Page Number Buttons -->
+        <li class="page-item" *ngFor="let pageNumber of pageNumbers()">
+          <button
+            class="page-link mx-1 rounded-2"
+            (click)="goToPage(pageNumber)"
+            [ngClass]="{
+              'btn-nxt': page === pageNumber,
+              'btn-pageno': page !== pageNumber
+            }"
+          >
+            {{ pageNumber }}
+          </button>
+        </li>
+  
+        <li class="page-item">
+          <button
+            class="page-link btn btn-nxtpage mx-1"
+            (click)="nextPage()"
+            [disabled]="page * pageSize >= totalUsers"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
