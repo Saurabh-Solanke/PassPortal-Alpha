@@ -13,6 +13,7 @@
     </select>
   </div>
 
+  <!-- Complaints Table -->
   <table class="table table-hover table-bordered">
     <thead>
       <tr>
@@ -32,11 +33,11 @@
           </button>
         </th>
         <th>Status</th>
-        <th>Review</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let complaint of complaints$ | async">
+      <tr *ngFor="let complaint of displayedComplaints">
         <td>{{ complaint.id }}</td>
         <td>{{ complaint.email }}</td>
         <td>{{ complaint.subject }}</td>
@@ -48,10 +49,10 @@
             class="btn btn-review"
             (click)="openModal(content, complaint)"
           >
-            <i class="fas fa-eye"></i> Review
+            <i class="fas fa-eye"></i>
           </button>
           <button *ngIf="complaint.status === 'Resolved'" class="btn" disabled>
-            <i class="fas fa-check"></i> Reviewed
+            <i class="fas fa-check"></i>
           </button>
         </td>
       </tr>
@@ -109,6 +110,7 @@
       ></button>
     </div>
     <div class="modal-body">
+      <p><strong>Complaint ID:</strong> {{ selectedComplaint?.id }}</p>
       <p><strong>Email:</strong> {{ selectedComplaint?.email }}</p>
       <p><strong>Subject:</strong> {{ selectedComplaint?.subject }}</p>
       <p>
@@ -120,20 +122,21 @@
     <div class="modal-footer">
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-nxt"
         (click)="acknowledgeOrResolve()"
       >
-        <i class="fas fa-check-circle"></i> Acknowledge/Resolve
+        Mark Resolved
       </button>
-      <button type="button" class="btn btn-secondary" (click)="sendEmail()">
-        <i class="fas fa-envelope"></i> Send Email
+      <button type="button" class="btn btn-nxt" (click)="sendEmail()">
+        Send Email
       </button>
       <button
         type="button"
-        class="btn btn-secondary"
+        class="btn"
+        aria-label="Close"
         (click)="modal.dismiss('Cross click')"
       >
-        <i class="fas fa-times"></i> Close
+        Close
       </button>
     </div>
   </ng-template>

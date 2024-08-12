@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, HttpClientModule],
 })
 export class ComplaintsComponent implements OnInit {
-  complaints$: Observable<Complaint[]> = of([]);
+  complaints: Complaint[] = [];
+  displayedComplaints: Complaint[] = [];
   selectedComplaint: Complaint | null = null;
   page = 1;
   pageSize = 6; // Show 6 entries per page
@@ -29,44 +30,48 @@ export class ComplaintsComponent implements OnInit {
 
   loadComplaints(): void {
     this.http
-      .get<Complaint[]>(
-        `http://localhost:3000/complaints?_sort=dateTime&_order=${this.sortOrder}`
-      )
+      .get<Complaint[]>('http://localhost:3000/complaints')
       .subscribe((data) => {
         const filteredData = this.applyFilterCriteria(data);
+        this.complaints = filteredData;
         this.totalComplaints = filteredData.length;
-        this.complaints$ = of(
-          filteredData.slice(
-            (this.page - 1) * this.pageSize,
-            this.page * this.pageSize
-          )
-        );
+        this.sortComplaints(); // Sort on the front end
+        this.updateDisplayedComplaints();
       });
   }
 
   toggleSortOrder(): void {
     this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
-    this.loadComplaints();
+    this.sortComplaints();
+    this.updateDisplayedComplaints();
+  }
+
+  sortComplaints(): void {
+    this.complaints.sort((a, b) => {
+      const dateA = new Date(a.dateTime).getTime();
+      const dateB = new Date(b.dateTime).getTime();
+      return this.sortOrder === 'asc' ? dateA - dateB : dateB - dateA;
+    });
   }
 
   previousPage(): void {
     if (this.page > 1) {
       this.page--;
-      this.loadComplaints();
+      this.updateDisplayedComplaints();
     }
   }
 
   nextPage(): void {
     if (this.page * this.pageSize < this.totalComplaints) {
       this.page++;
-      this.loadComplaints();
+      this.updateDisplayedComplaints();
     }
   }
 
   goToPage(pageNumber: number): void {
     if (pageNumber > 0 && pageNumber <= this.totalPages()) {
       this.page = pageNumber;
-      this.loadComplaints();
+      this.updateDisplayedComplaints();
     }
   }
 
@@ -84,7 +89,7 @@ export class ComplaintsComponent implements OnInit {
     const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1); // Start of the month
     const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0); // End of the month
     const startOfYear = new Date(now.getFullYear(), 0, 1); // Start of the year
-  
+
     switch (this.filterCriteria) {
       case 'thisWeek':
         return data.filter(
@@ -100,8 +105,7 @@ export class ComplaintsComponent implements OnInit {
         );
       case 'thisYear':
         return data.filter(
-          (complaint) =>
-            new Date(complaint.dateTime) >= startOfYear
+          (complaint) => new Date(complaint.dateTime) >= startOfYear
         );
       case 'pending':
         return data.filter((complaint) => complaint.status === 'Pending');
@@ -111,7 +115,14 @@ export class ComplaintsComponent implements OnInit {
         return data;
     }
   }
-  
+
+  updateDisplayedComplaints(): void {
+    this.displayedComplaints = this.complaints.slice(
+      (this.page - 1) * this.pageSize,
+      this.page * this.pageSize
+    );
+  }
+
   openModal(content: any, complaint: Complaint): void {
     this.selectedComplaint = complaint;
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
