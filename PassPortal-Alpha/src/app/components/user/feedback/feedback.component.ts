@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
+import { CommonModule } from '@angular/common'; // Use CommonModule for standalone components
 
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
   styleUrls: ['./feedback.component.css'],
   standalone: true,
-  imports: [HttpClientModule, FormsModule],
+  imports: [
+    HttpClientModule,
+    FormsModule,
+    ToastModule,
+    CommonModule, // Use CommonModule instead of BrowserAnimationsModule
+  ],
+  providers: [MessageService],
 })
 export class FeedbackComponent {
   formData = {
@@ -16,7 +25,10 @@ export class FeedbackComponent {
     message: '',
   };
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService
+  ) {}
 
   onSubmit() {
     const newEntry = {
@@ -35,15 +47,21 @@ export class FeedbackComponent {
 
     this.http.post(url, newEntry).subscribe(
       () => {
-        alert(
-          `${
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: `${
             this.formData.type === 'feedback' ? 'Feedback' : 'Complaint'
-          } submitted successfully!`
-        );
+          } submitted successfully!`,
+        });
         this.resetForm();
       },
       (error) => {
-        alert('An error occurred while submitting your request.');
+        this.messageService.add({
+          severity: 'error',
+          summary: 'Error',
+          detail: 'An error occurred while submitting your request.',
+        });
         console.error(error);
       }
     );
@@ -57,7 +75,7 @@ export class FeedbackComponent {
     const loggedInUser = JSON.parse(
       sessionStorage.getItem('loggedInUser') || '{}'
     );
-    return loggedInUser.email || 'anonymous';
+    return loggedInUser.email || 'anonymous@example.com';
   }
 
   resetForm() {
