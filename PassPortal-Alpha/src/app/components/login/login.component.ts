@@ -55,12 +55,26 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe(
         (res: any) => {
-          if (res.password === this.loginForm.value.password) {
-            // Swal.fire('Success', 'Login successful!', 'success');
-            sessionStorage.setItem('loggedInUser', res.name);
-            this.router.navigate(['/user-home'], {
-              state: { username: res.name },
-            });
+          if (res) {
+            sessionStorage.setItem(
+              'loggedInUser',
+              JSON.stringify({
+                name: res.name,
+                email: res.email,
+                phone: res.phone,
+              })
+            );
+
+            // Redirect based on user role
+            if (res.role === 'Client') {
+              this.router.navigate(['/user-home'], {
+                state: { username: res.name },
+              });
+            } else if (res.role === 'Admin') {
+              this.router.navigate(['/admin'], {
+                state: { username: res.name },
+              });
+            }
           } else {
             Swal.fire('Error', 'Invalid email or password', 'error');
           }

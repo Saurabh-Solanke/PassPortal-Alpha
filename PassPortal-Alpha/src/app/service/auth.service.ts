@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { User } from '../interfaces/user.interface'; // Adjust the path if necessary
 
 @Injectable({
   providedIn: 'root',
@@ -18,9 +19,9 @@ export class AuthService {
     );
   }
 
-  login(credentials: any): Observable<any> {
+  login(credentials: any): Observable<User | null> {
     return this.http
-      .get<any[]>(`${this.baseUrl}?email=${credentials.email}&password=${credentials.password}`)
+      .get<User[]>(`${this.baseUrl}?email=${credentials.email}&password=${credentials.password}`)
       .pipe(
         map((users) => {
           if (users.length > 0) {
@@ -46,7 +47,7 @@ export class AuthService {
   emailExists(email: string): Observable<boolean> {
     console.log(`Checking if email exists: ${email}`); // Added line
     return this.http
-      .get<any[]>(`${this.baseUrl}?email=${email}`)
+      .get<User[]>(`${this.baseUrl}?email=${email}`)
       .pipe(
         map(users => {
           console.log('API Response:', users); // Added line
