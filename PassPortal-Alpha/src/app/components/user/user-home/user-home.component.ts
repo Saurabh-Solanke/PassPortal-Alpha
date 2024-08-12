@@ -1,5 +1,9 @@
+
+
+
+
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from '../../footer/footer.component';
 import { UserNavbarComponent } from '../user-navbar/user-navbar.component';
@@ -18,20 +22,12 @@ import { BreadcrumbComponent } from '../../breadcrumb/breadcrumb.component';
     BreadcrumbComponent,
   ],
 })
-export class UserHomeComponent {
-  username = 'Saurabh Solanke';
-  applicationNumber = '98564';
-  expectedCompletion = 3;
-  profileName = 'Saurabh Solanke';
-  profileEmail = 'saurabh.s@gmail.com';
-  profilePhone = '+91 7770070411';
-
-  recentActivities = [
-    'Applied for a new passport on 01/06/2024',
-    'Uploaded documents on 02/06/2024',
-    'Scheduled appointment on 03/06/2024',
-  ];
-
+export class UserHomeComponent implements OnInit {
+  username: string = '';
+  profileName: string = '';
+  profileEmail: string = '';
+  profilePhone: string = '';
+  recentActivities: string[] = []; 
   normalPlans = [
     {
       title: 'Fresh Passport',
@@ -93,4 +89,25 @@ export class UserHomeComponent {
       bookletType: '36_pages',
     },
   ];
+
+  ngOnInit(): void {
+    this.loadUserData();
+  }
+
+  loadUserData(): void {
+    const loggedInUser = sessionStorage.getItem('loggedInUser');
+    if (loggedInUser) {
+      try {
+        const user = JSON.parse(loggedInUser);
+        this.username = user.name;
+        this.profileName = user.name;
+        this.profileEmail = user.email;
+        this.profilePhone = user.phone;
+      } catch (error) {
+        console.error('Error parsing user data from session storage', error);
+      }
+    } else {
+      console.warn('No user data found in session storage');
+    }
+  }
 }
