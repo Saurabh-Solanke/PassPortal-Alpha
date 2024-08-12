@@ -1,1 +1,68 @@
-<p>admin-dashboard works!</p>
+<div class="container">
+  <h1>Admin Dashboard</h1>
+  <div class="d-flex justify-content-between">
+    <!-- Users Section -->
+    <div class="section user-section">
+    
+      <div class="row">
+        <div class="col-12 ">
+          <div class="user-stats">
+            <h2>Total Users</h2>
+            <p>Total Accounts: {{ totalClients }}</p>
+            <p>Active Accounts: {{ activeClients }}</p>
+            <p>Disabled Accounts: {{ disabledClients }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Complaints Section -->
+    <div class="section complaints-section">
+   
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="user-stats">
+            <h2>Complaints</h2>
+            <p>Resolved Complaints: {{ resolvedComplaintsCount }}</p>
+            <p>Pending Complaints: {{ pendingComplaintsCount }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedbacks Section -->
+    <div class="section feedbacks-section">
+     
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="user-stats">
+            <h2>Feedbacks</h2>
+            <p>Acknowledged Feedbacks: {{ acknowledgedFeedbacksCount }}</p>
+            <p>Pending Feedbacks: {{ pendingFeedbacksCount }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Charts Section -->
+  <div class=" charts-section">
+    <h2>Charts</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="chart-container">
+          <canvas id="userChart"></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="chart-container">
+          <canvas id="complaintsChart"></canvas>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="chart-container">
+          <canvas id="feedbacksChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
