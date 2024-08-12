@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-user-navbar',
@@ -10,4 +10,12 @@ import { RouterLink } from '@angular/router';
 })
 export class UserNavbarComponent {
 
+  constructor(private router: Router) {}
+  logout() {
+
+    sessionStorage.clear();
+
+    
+    this.router.navigate(['/']);
+  }
 }
