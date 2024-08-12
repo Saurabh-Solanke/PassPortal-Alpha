@@ -154,9 +154,4 @@ export class AdminDashboardComponent implements OnInit {
     });
   }
 
-  scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  reviewComplaint(complaint: any) {}
 }
