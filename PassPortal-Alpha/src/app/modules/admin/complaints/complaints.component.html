@@ -61,14 +61,14 @@
 
   <!-- Pagination -->
   <nav aria-label="Page navigation">
-    <ul class="pagination justify-content-center">
+    <ul class="pagination justify-content-center mt-4">
       <li class="page-item">
         <button
-          class="page-link btn btn-nxt"
+          class="page-link btn btn-nxtpage mx-1"
           (click)="previousPage()"
           [disabled]="page === 1"
         >
-          <i class="fas fa-chevron-left"></i> Previous
+          <i class="fas fa-chevron-left"></i> 
         </button>
       </li>
 
@@ -88,11 +88,11 @@
 
       <li class="page-item">
         <button
-          class="page-link btn btn-nxt"
+          class="page-link btn btn-nxtpage mx-1"
           (click)="nextPage()"
           [disabled]="page * pageSize >= totalComplaints"
         >
-          <i class="fas fa-chevron-right"></i> Next
+          <i class="fas fa-chevron-right"></i>
         </button>
       </li>
     </ul>
