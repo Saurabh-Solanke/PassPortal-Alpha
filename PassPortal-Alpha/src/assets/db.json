@@ -494,5 +494,304 @@
       "message": "yeooo",
       "status": "Pending"
     }
+  ],
+  "passportOffices": [
+    {
+      "id": "1",
+      "name": "Ahmedabad"
+    },
+    {
+      "id": "2",
+      "name": "Amritsar"
+    },
+    {
+      "id": "3",
+      "name": "Bangalore"
+    },
+    {
+      "id": "4",
+      "name": "Bareilly"
+    },
+    {
+      "id": "5",
+      "name": "Bhopal"
+    },
+    {
+      "id": "6",
+      "name": "Bhubaneswar"
+    },
+    {
+      "id": "7",
+      "name": "Chandigarh"
+    },
+    {
+      "id": "8",
+      "name": "Chennai"
+    },
+    {
+      "id": "9",
+      "name": "Cochin"
+    },
+    {
+      "id": "10",
+      "name": "Dehradun"
+    },
+    {
+      "id": "11",
+      "name": "Delhi"
+    },
+    {
+      "id": "12",
+      "name": "Ghaziabad"
+    },
+    {
+      "id": "13",
+      "name": "Goa"
+    },
+    {
+      "id": "14",
+      "name": "Guwahati"
+    },
+    {
+      "id": "15",
+      "name": "Hyderabad"
+    },
+    {
+      "id": "16",
+      "name": "Jaipur"
+    },
+    {
+      "id": "17",
+      "name": "Jalandhar"
+    },
+    {
+      "id": "18",
+      "name": "Jammu"
+    },
+    {
+      "id": "19",
+      "name": "Kolkata"
+    },
+    {
+      "id": "20",
+      "name": "Kozhikode"
+    },
+    {
+      "id": "21",
+      "name": "Lucknow"
+    },
+    {
+      "id": "22",
+      "name": "Madurai"
+    },
+    {
+      "id": "23",
+      "name": "Malappuram"
+    },
+    {
+      "id": "24",
+      "name": "Mumbai"
+    },
+    {
+      "id": "25",
+      "name": "Nagpur"
+    },
+    {
+      "id": "26",
+      "name": "Patna"
+    },
+    {
+      "id": "27",
+      "name": "Pune"
+    },
+    {
+      "id": "28",
+      "name": "Raipur"
+    },
+    {
+      "id": "29",
+      "name": "Ranchi"
+    },
+    {
+      "id": "30",
+      "name": "Shimla"
+    },
+    {
+      "id": "31",
+      "name": "Srinagar"
+    },
+    {
+      "id": "32",
+      "name": "Surat"
+    },
+    {
+      "id": "33",
+      "name": "Thane"
+    },
+    {
+      "id": "34",
+      "name": "Trichy"
+    },
+    {
+      "id": "35",
+      "name": "Trivandrum"
+    },
+    {
+      "id": "36",
+      "name": "Visakhapatnam"
+    },
+    {
+      "id": "37",
+      "name": "Agra"
+    },
+    {
+      "id": "38",
+      "name": "Ajmer"
+    },
+    {
+      "id": "39",
+      "name": "Aligarh"
+    },
+    {
+      "id": "40",
+      "name": "Allahabad"
+    },
+    {
+      "id": "41",
+      "name": "Aurangabad"
+    },
+    {
+      "id": "42",
+      "name": "Asansol"
+    },
+    {
+      "id": "43",
+      "name": "Bikaner"
+    },
+    {
+      "id": "44",
+      "name": "Bilaspur"
+    },
+    {
+      "id": "45",
+      "name": "Cuttack"
+    },
+    {
+      "id": "46",
+      "name": "Dharamshala"
+    },
+    {
+      "id": "47",
+      "name": "Dibrugarh"
+    },
+    {
+      "id": "48",
+      "name": "Dimapur"
+    },
+    {
+      "id": "49",
+      "name": "Durgapur"
+    },
+    {
+      "id": "50",
+      "name": "Faridabad"
+    }
+  ],
+  "NewPassportApply": [
+    {
+      "id": "405349498",
+      "submittedByUserId": "",
+      "passportNumber": "7354002427",
+      "passportStatus": "Applied",
+      "paymentStatus": "Unpaid",
+      "transactionId": "",
+      "transactionTimestamp": "",
+      "isReNew": false,
+      "serviceRequestForm": {
+        "applicationType": "normal",
+        "passportPages": "pages36",
+        "validityPeriod": "years10"
+      },
+      "applicantForm": {
+        "applicantName": "Saurabh",
+        "applicantSurName": "Solanke",
+        "aliases": "Yes",
+        "changedname": "Yes",
+        "dob": "2000-03-07",
+        "placeOfBirth": "Pune",
+        "gender": "Male",
+        "district": "Parbhani",
+        "state": "Maharashtra",
+        "country": "India",
+        "pan": "DOSPS0905A",
+        "voterId": "7410741041",
+        "maritalStatus": "Single",
+        "employmentType": "Private",
+        "organizationName": "7845120",
+        "parentOrSpouseGovServant": "Yes",
+        "educationQualification": "Graduate and above",
+        "nonEcrEligible": "Yes",
+        "distinguishingMark": "qwerty",
+        "aadhaarNumber": "874512084512",
+        "userChangedName": "Solisfang",
+        "userAliasesName": "Solis"
+      },
+      "feedbackForm": {
+        "fatherName": "Kalyan",
+        "fatherSurname": "Solanke",
+        "motherName": "Smita",
+        "motherSurname": "Solanke",
+        "legalGuardianName": "qwerty",
+        "legalGuardianSurname": "qwerty",
+        "spouseName": "qwerty",
+        "spouseSurname": "qwerty",
+        "fatherPassportNumber": "784512084512",
+        "fatherNationality": "indian",
+        "motherPassportNumber": "qwerty",
+        "motherNationality": "qwerty"
+      },
+      "addressForm": {
+        "houseNumber": "Kondhwa BK",
+        "city": "Pune",
+        "adistrict": "Pune",
+        "astate": "Maharashtra",
+        "pin": "411057",
+        "mobileNumber": "7770070411",
+        "telephoneNumber": "7410852012",
+        "addressLane1": "Kondhwa BK"
+      },
+      "emergencyForm": {
+        "emergencyDetailName": "Saurabh Solanke",
+        "emergencyDetailAddress": "Kondhwa BK",
+        "emergencyDetailMobileNo": "7845104517",
+        "emergencyDetailEmail": "qwerty@gmail.com",
+        "emergencyDetailCity": "Pune",
+        "emergencyDetailState": "Maharashtra"
+      },
+      "questionsForm": {
+        "isCriminalProceedings": "No",
+        "isWarrantSummons": "No",
+        "isArrestWarrant": "No",
+        "isDepartureOrder": "No",
+        "isConviction": "No",
+        "isPassportRefusal": "No",
+        "isPassportImpounded": "No",
+        "isPassportRevoked": "No",
+        "isForeignCitizenship": "No",
+        "isOtherPassport": "No",
+        "isSurrenderedPassport": "No",
+        "isRenunciation": "No",
+        "isEmergencyCertificate": "No",
+        "isDeported": "No",
+        "isRepatriated": "No"
+      },
+      "declarationForm": {
+        "chkDeclaration": true,
+        "placeOfApply": "Pune",
+        "dateOfApply": "2024-08-15",
+        "userPhoto": {},
+        "userSignature": {}
+      }
+    }
   ]
 }

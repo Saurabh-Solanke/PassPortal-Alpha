@@ -1,0 +1,36 @@
+.bg-c1 {
+  background-color: var(--color-primary);
+}
+
+button.active {
+  background-color: var(--color-primary);
+}
+button.nav-link {
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-nxt {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-nxt:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn-prev {
+  background-color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-prev:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}

@@ -59,10 +59,14 @@ export class LoginComponent {
             sessionStorage.setItem(
               'loggedInUser',
               JSON.stringify({
+
                 name: res.name,
                 email: res.email,
                 phone: res.phone,
               })
+            );
+            sessionStorage.setItem(
+              'loggedInUserId',JSON.stringify({id: res.id})
             );
 
             // Redirect based on user role

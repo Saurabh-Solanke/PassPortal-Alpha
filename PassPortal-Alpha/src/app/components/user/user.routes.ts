@@ -6,6 +6,7 @@ import { RenewalPassportComponent } from './renewal-passport/renewal-passport.co
 import { HistoryComponent } from './history/history.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FaqComponent } from './faq/faq.component';
+import { NewPassportApplyComponent } from './new-passport-apply/new-passport-apply.component';
 
 export const USER_ROUTES: Routes = [
   {
@@ -34,6 +35,12 @@ export const USER_ROUTES: Routes = [
         data: { breadcrumb: 'Feedback' },
       },
       { path: 'faq', component: FaqComponent, data: { breadcrumb: 'FAQ' } },
+
+      {
+        path: 'newpass',
+        component: NewPassportApplyComponent,
+        data: { breadcrumb: 'New Passport Application' },
+      },
     ],
   },
 ];
