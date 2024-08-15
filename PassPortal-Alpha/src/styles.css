@@ -5,10 +5,10 @@
   --color-support1: #faf2f2;
 }
 .c1 {
-  --color-primary: #4a154b;
+  color: var(--color-primary);
 }
 .c2 {
-  --color-secondary: #df6404;
+  color: var(--color-secondary);
 }
 .content {
   padding-top: 0px; /* Adjust this based on the height of your navbar */
@@ -102,4 +102,18 @@ input:focus {
   outline: none;
   animation: glow 1.5s infinite alternate;
   background-color: var(--color-support1);
+}
+
+.navbar {
+  z-index: 1030;
+  position: relative;
+}
+
+.breadcrumb {
+  position: relative;
+  z-index: 1020;
+}
+
+.p-toast {
+  z-index: 1050;
 }
