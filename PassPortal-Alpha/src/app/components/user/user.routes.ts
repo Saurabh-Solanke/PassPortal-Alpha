@@ -7,6 +7,7 @@ import { HistoryComponent } from './history/history.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FaqComponent } from './faq/faq.component';
 import { NewPassportApplyComponent } from './new-passport-apply/new-passport-apply.component';
+import { RenewalPassportApplyComponent } from './renewal-passport-apply/renewal-passport-apply.component';
 
 export const USER_ROUTES: Routes = [
   {
@@ -15,12 +16,12 @@ export const USER_ROUTES: Routes = [
     children: [
       { path: '', component: UserHomeComponent, data: { breadcrumb: 'Home' } },
       {
-        path: 'new-passport',
+        path: 'new-pass',
         component: NewPassportComponent,
         data: { breadcrumb: 'New Passport' },
       },
       {
-        path: 'renewal-passport',
+        path: 'renewal-pass',
         component: RenewalPassportComponent,
         data: { breadcrumb: 'Renewal Passport' },
       },
@@ -37,13 +38,13 @@ export const USER_ROUTES: Routes = [
       { path: 'faq', component: FaqComponent, data: { breadcrumb: 'FAQ' } },
 
       {
-        path: 'newpass',
+        path: 'new-passport',
         component: NewPassportApplyComponent,
         data: { breadcrumb: 'New Passport Application' },
       },
       {
-        path: 'renewpass',
-        component: NewPassportApplyComponent,
+        path: 'renewal-passport',
+        component: RenewalPassportApplyComponent,
         data: { breadcrumb: 'Renewal Passport Application' },
       },
     ],

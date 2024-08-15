@@ -2,20 +2,19 @@
 <app-user-navbar></app-user-navbar>
 <div class="min-vh-70 p-0">
   <div class="row justify-content-center align-items-center px-3 flex-grow-1">
-    <div
-      class="row justify-content-center align-items-center mt-5 ps-3 pe-3 flex-grow-1"
-    >
-      <!-- Tabbed Form Section -->
-      <div class="col-md-12 mt-5" id="tabbedForm">
-        <div class="card mt-3">
-          <div class="card-header">
-            <h6 class="mb-0">Re-Newal Passport Application Form</h6>
-          </div>
+    <!-- Tabbed Form Section -->
+    <div class="col-md-12" id="tabbedForm">
+      <div class="card">
+        <div class="card-body">
           <div class="card-body">
-            <ul class="nav nav-tabs bg-info-subtle" id="myTab" role="tablist">
+            <ul
+              class="nav nav-tabs bg-c1 rounded-5 p-2"
+              id="myTab"
+              role="tablist"
+            >
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link active"
+                  class="nav-link active rounded-5"
                   id="service-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#service"
@@ -29,7 +28,7 @@
               </li>
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link rounded-5"
                   id="applicant-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#applicant"
@@ -43,7 +42,7 @@
               </li>
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link rounded-5"
                   id="family-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#family"
@@ -57,7 +56,7 @@
               </li>
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link rounded-5"
                   id="residential-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#residential"
@@ -71,7 +70,7 @@
               </li>
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link rounded-5"
                   id="emergency-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#emergency"
@@ -85,7 +84,7 @@
               </li>
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link rounded-5"
                   id="other-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#other"
@@ -99,7 +98,7 @@
               </li>
               <li class="nav-item" role="presentation">
                 <button
-                  class="nav-link"
+                  class="nav-link rounded-5"
                   id="declaration-tab"
                   data-bs-toggle="tab"
                   data-bs-target="#declaration"
@@ -125,10 +124,10 @@
                   <div class="col-lg-12 col-12">
                     <form
                       [formGroup]="serviceRequestForm"
-                      class="p-5 needs-validation"
+                      class="m-3 needs-validation"
                       novalidate
                     >
-                      <div class="mt-5 border shadow p-5">
+                      <div class="border shadow p-5">
                         <label for="applicationtype">Type of Application</label
                         ><br />
                         <select
@@ -280,10 +279,10 @@
                           <button
                             type="button"
                             id="btnNext"
-                            class="btn btn-success"
+                            class="btn btn-nxt"
                             (click)="showNextTab(1)"
                           >
-                            Next
+                             Next<i class="fas fa-arrow-right ms-2"></i>
                           </button>
                         </div>
                       </div>
@@ -298,8 +297,9 @@
                 role="tabpanel"
                 aria-labelledby="applicant-tab"
               >
-                <form [formGroup]="applicantForm">
-                  <div class="row container border shadow p-5 m-5">
+                <form [formGroup]="applicantForm" class="m-3">
+        
+                  <div class="row border shadow p-5">
                     <div class="col-md-6">
                       <!-- Applicant's Name -->
                       <div class="mb-3">
@@ -1045,18 +1045,18 @@
                       <button
                         type="button"
                         id="btnPrev"
-                        class="btn btn-info"
+                        class="btn btn-prev"
                         (click)="showPreviousTab()"
                       >
-                        Previous
+                          <i class="fas fa-arrow-left me-2"></i>Prev
                       </button>
                       <button
                         type="button"
                         id="btnNext"
-                        class="btn btn-success"
+                        class="btn btn-nxt"
                         (click)="showNextTab(2)"
                       >
-                        Next
+                         Next<i class="fas fa-arrow-right ms-2"></i>
                       </button>
                     </div>
                   </div>
@@ -1072,10 +1072,10 @@
                 <!-- family Details Tab Content -->
                 <form
                   [formGroup]="feedbackForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="mb-3">
                         <label for="fatherName">Father's Given Name</label>
@@ -1332,18 +1332,18 @@
                       <button
                         type="button"
                         id="btnPrev"
-                        class="btn btn-info"
+                        class="btn btn-prev"
                         (click)="showPreviousTab()"
                       >
-                        Previous
+                          <i class="fas fa-arrow-left me-2"></i>Prev
                       </button>
                       <button
                         type="button"
                         id="btnNext"
-                        class="btn btn-success"
+                        class="btn btn-nxt"
                         (click)="showNextTab(3)"
                       >
-                        Next
+                         Next<i class="fas fa-arrow-right ms-2"></i>
                       </button>
                     </div>
                   </div>
@@ -1359,10 +1359,10 @@
                 <!-- Residential Details Tab Content -->
                 <form
                   [formGroup]="addressForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="mb-3">
                         <label for="houseNumber"
@@ -1569,18 +1569,18 @@
                       <button
                         type="button"
                         id="btnPrev"
-                        class="btn btn-info"
+                        class="btn btn-prev"
                         (click)="showPreviousTab()"
                       >
-                        Previous
+                          <i class="fas fa-arrow-left me-2"></i>Prev
                       </button>
                       <button
                         type="button"
                         id="btnNext"
-                        class="btn btn-success"
+                        class="btn btn-nxt"
                         (click)="showNextTab(4)"
                       >
-                        Next
+                         Next<i class="fas fa-arrow-right ms-2"></i>
                       </button>
                     </div>
                   </div>
@@ -1596,10 +1596,10 @@
                 <!-- Emergency Contact Tab Content -->
                 <form
                   [formGroup]="emergencyForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="mb-3">
                         <label for="emergencyDetailName">Name</label>
@@ -1766,18 +1766,18 @@
                       <button
                         type="button"
                         id="btnPrev"
-                        class="btn btn-info"
+                        class="btn btn-prev"
                         (click)="showPreviousTab()"
                       >
-                        Previous
+                          <i class="fas fa-arrow-left me-2"></i>Prev
                       </button>
                       <button
                         type="button"
                         id="btnNext"
-                        class="btn btn-success"
+                        class="btn btn-nxt"
                         (click)="showNextTab(5)"
                       >
-                        Next
+                         Next<i class="fas fa-arrow-right ms-2"></i>
                       </button>
                     </div>
                   </div>
@@ -1793,10 +1793,10 @@
                 <!-- Other Tab Content -->
                 <form
                   [formGroup]="questionsForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <label for=""
                         ><strong
@@ -2411,18 +2411,18 @@
                       <button
                         type="button"
                         id="btnPrev"
-                        class="btn btn-info"
+                        class="btn btn-prev"
                         (click)="showPreviousTab()"
                       >
-                        Previous
+                          <i class="fas fa-arrow-left me-2"></i>Prev
                       </button>
                       <button
                         type="button"
                         id="btnNext"
-                        class="btn btn-success"
+                        class="btn btn-nxt"
                         (click)="showNextTab(6)"
                       >
-                        Next
+                         Next<i class="fas fa-arrow-right ms-2"></i>
                       </button>
                     </div>
                   </div>
@@ -2436,8 +2436,9 @@
                 aria-labelledby="declaration-tab"
               >
                 <!-- Self Declaration Tab Content -->
-                <form [formGroup]="declarationForm">
-                  <div class="row container border shadow m-5 p-5">
+                <form [formGroup]="declarationForm" class="m-3">
+                
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="form-check">
                         <input
@@ -2582,15 +2583,15 @@
                       <button
                         type="button"
                         id="btnPrev"
-                        class="btn btn-info"
+                        class="btn btn-prev"
                         (click)="showPreviousTab()"
                       >
-                        Previous
+                          <i class="fas fa-arrow-left me-2"></i>Prev
                       </button>
                       <button
                         type="submit"
                         id="btnSubmit"
-                        class="btn btn-success"
+                        class="btn btn-nxt"
                         (click)="onSubmit()"
                       >
                         Submit Application

@@ -127,7 +127,7 @@
                       class="m-3 needs-validation"
                       novalidate
                     >
-                      <div class="border shadow p-5">
+                      <div class="row border shadow p-5">
                         <label for="applicationtype">Type of Application</label
                         ><br />
                         <select
@@ -231,9 +231,9 @@
                 role="tabpanel"
                 aria-labelledby="applicant-tab"
               >
-                <form [formGroup]="applicantForm">
-                  <div class="row container border shadow p-5 m-5">
-                    <div class="col-md-12">
+                <form [formGroup]="applicantForm" class="m-3">
+                  <div class="row border shadow p-5">
+                    <div class="col-md-12 col-12">
                       <!-- Applicant's Name -->
                       <div class="mb-3">
                         <label for="applicantName">Applicant's Name</label>
@@ -583,10 +583,8 @@
                           "
                           class="text-danger fw-medium"
                         >
-                         
-                            Please enter a valid PAN card number (e.g.,
-                            ABCDE1234F).
-                         
+                          Please enter a valid PAN card number (e.g.,
+                          ABCDE1234F).
                         </span>
                       </div>
 
@@ -926,10 +924,10 @@
                 <!-- family Details Tab Content -->
                 <form
                   [formGroup]="feedbackForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="mb-3">
                         <label for="fatherName">Father's Given Name</label>
@@ -1213,10 +1211,10 @@
                 <!-- Residential Details Tab Content -->
                 <form
                   [formGroup]="addressForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="mb-3">
                         <label for="houseNumber"
@@ -1450,10 +1448,10 @@
                 <!-- Emergency Contact Tab Content -->
                 <form
                   [formGroup]="emergencyForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="mb-3">
                         <label for="emergencyDetailName">Name</label>
@@ -1647,10 +1645,10 @@
                 <!-- Other Tab Content -->
                 <form
                   [formGroup]="questionsForm"
-                  class="needs-validation"
+                  class="m-3 needs-validation"
                   novalidate
                 >
-                  <div class="row container border shadow m-5 p-5">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <label for=""
                         ><strong
@@ -2290,8 +2288,8 @@
                 aria-labelledby="declaration-tab"
               >
                 <!-- Self Declaration Tab Content -->
-                <form [formGroup]="declarationForm">
-                  <div class="row container border shadow m-5 p-5">
+                <form [formGroup]="declarationForm" class="m-3">
+                  <div class="row border shadow p-5">
                     <div class="col-md-6 col-12">
                       <div class="form-check">
                         <input

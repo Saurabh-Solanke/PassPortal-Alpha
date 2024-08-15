@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { User } from './../../../interfaces/user.interface';
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
@@ -29,7 +30,7 @@ import { UserService } from '../../../service/user.service';
 @Component({
   selector: 'app-renewal-passport-apply',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, UserNavbarComponent],
+  imports: [ReactiveFormsModule, CommonModule, UserNavbarComponent,HttpClientModule],
   providers: [PassportApplyService, UserService],
   templateUrl: './renewal-passport-apply.component.html',
   styleUrls: ['./renewal-passport-apply.component.css'],
