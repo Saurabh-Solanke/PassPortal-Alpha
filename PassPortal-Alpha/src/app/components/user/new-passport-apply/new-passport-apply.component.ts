@@ -35,7 +35,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     UserNavbarComponent,
     HttpClientModule,
   ],
-  providers: [PassportApplyService,UserService],
+  providers: [PassportApplyService, UserService],
   templateUrl: './new-passport-apply.component.html',
   styleUrl: './new-passport-apply.component.css',
 })
@@ -173,10 +173,7 @@ export class NewPassportApplyComponent {
       district: ['', Validators.required],
       state: ['', Validators.required],
       country: ['', Validators.required],
-      pan: [
-        '',
-        [Validators.required, Validators.pattern(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/)],
-      ],
+      pan: ['', [Validators.pattern(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/)]],
       voterId: [''],
       maritalStatus: ['', Validators.required],
       employmentType: ['', Validators.required],

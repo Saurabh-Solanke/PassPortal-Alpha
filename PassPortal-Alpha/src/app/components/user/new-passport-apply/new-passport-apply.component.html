@@ -573,23 +573,20 @@
                           class="form-control"
                           formControlName="pan"
                           maxlength="10"
-                          placeholder="Enter PAN (If available)"
+                          placeholder="Enter PAN (If available) (e.g., ABCDE1234F)."
                         />
                         <span
                           *ngIf="
                             applicantForm.get('pan')?.touched &&
-                            applicantForm.get('pan')?.invalid
+                            applicantForm.get('pan')?.invalid &&
+                            applicantForm.get('pan')?.errors?.['pattern']
                           "
                           class="text-danger fw-medium"
                         >
-                          <span
-                            *ngIf="applicantForm.get('pan')?.errors?.['required']"
-                            >Please enter PAN card number.</span
-                          >
-                          <span
-                            *ngIf="applicantForm.get('pan')?.errors?.['maxlength']"
-                            >PAN card number cannot exceed 10 characters.</span
-                          >
+                         
+                            Please enter a valid PAN card number (e.g.,
+                            ABCDE1234F).
+                         
                         </span>
                       </div>
 
