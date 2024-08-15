@@ -41,7 +41,7 @@
         <td>{{ complaint.id }}</td>
         <td>{{ complaint.email }}</td>
         <td>{{ complaint.subject }}</td>
-        <td>{{ complaint.dateTime | date : "short" }}</td>
+        <td>{{ complaint.dateTime | date : "dd-MM-yyyy hh:mm a" }}</td>
         <td>{{ complaint.status }}</td>
         <td>
           <button
@@ -115,7 +115,7 @@
       <p><strong>Subject:</strong> {{ selectedComplaint?.subject }}</p>
       <p>
         <strong>Date & Time:</strong>
-        {{ selectedComplaint?.dateTime | date : "short" }}
+        {{ selectedComplaint?.dateTime | date : "dd-MM-yyyy hh:mm a" }}
       </p>
       <p><strong>Message:</strong> {{ selectedComplaint?.message }}</p>
     </div>

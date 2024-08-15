@@ -41,7 +41,7 @@
         <td>{{ feedback.id }}</td>
         <td>{{ feedback.email }}</td>
         <td>{{ feedback.subject }}</td>
-        <td>{{ feedback.dateTime | date : "short" }}</td>
+        <td>{{ feedback.dateTime | date : "dd-MM-yyyy hh:mm a" }}</td>
         <td>{{ feedback.status }}</td>
         <td>
           <button
@@ -119,7 +119,7 @@
       <p><strong>Subject:</strong> {{ selectedFeedback?.subject }}</p>
       <p>
         <strong>Date & Time:</strong>
-        {{ selectedFeedback?.dateTime | date : "short" }}
+        {{ selectedFeedback?.dateTime | date : "dd-MM-yyyy hh:mm a" }}
       </p>
       <p><strong>Message:</strong> {{ selectedFeedback?.message }}</p>
     </div>
