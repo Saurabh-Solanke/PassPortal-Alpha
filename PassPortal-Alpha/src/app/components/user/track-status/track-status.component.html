@@ -1,0 +1,124 @@
+<p-toast></p-toast>
+<div>
+  <div class="row">
+    <div class="col-lg-8 col-12 offset-2">
+      <form
+        [formGroup]="trackForm"
+        class="needs-validation"
+        (ngSubmit)="handleSubmit()"
+      >
+        <div class="border shadow p-5">
+          <h3 class="fw-bold">Track Application Status</h3>
+
+          <div class="mb-3">
+            <label for="applicationType" class="form-label"
+              >Select Application Type</label
+            >
+            <select
+              id="applicationType"
+              class="form-select"
+              formControlName="applicationType"
+              required
+            >
+              <option value="">-- select --</option>
+              <option value="Normal Passport">Normal Passport</option>
+              <option value="Tatkal Passport">Tatkal Passport</option>
+            </select>
+            <span
+              *ngIf="
+                trackForm.get('applicationType')?.touched &&
+                trackForm.get('applicationType')?.invalid
+              "
+              class="text-danger fw-medium"
+            >
+              <span
+                *ngIf="trackForm.get('applicationType')?.errors?.['required']"
+                >Please select an application type.</span
+              >
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="passportNumber" class="form-label"
+              >Passport Number</label
+            >
+            <input
+              type="text"
+              id="passportNumber"
+              class="form-control"
+              formControlName="passportNumber"
+              pattern="[0-9]{10}"
+              minlength="10"
+              maxlength="10"
+              placeholder="Passport Number"
+              title="Please enter a 10-digit numeric Passport Number"
+            />
+            <span
+              *ngIf="
+                trackForm.get('passportNumber')?.touched &&
+                trackForm.get('passportNumber')?.invalid
+              "
+              class="text-danger fw-medium"
+            >
+              <span
+                *ngIf="trackForm.get('passportNumber')?.errors?.['required']"
+                >Please enter a valid passport number.</span
+              >
+              <span *ngIf="trackForm.get('passportNumber')?.errors?.['pattern']"
+                >Passport number must be 10 digits.</span
+              >
+            </span>
+          </div>
+          <div class="mb-3">
+            <label for="dob" class="form-label">Date of Birth</label>
+            <input
+              type="date"
+              id="dob"
+              class="form-control"
+              formControlName="dob"
+              required
+            />
+            <span
+              *ngIf="
+                trackForm.get('dob')?.touched && trackForm.get('dob')?.invalid
+              "
+              class="text-danger fw-medium"
+            >
+              <span *ngIf="trackForm.get('dob')?.errors?.['required']"
+                >Please enter your date of birth.</span
+              >
+            </span>
+          </div>
+          <button type="submit" class="btn btn-nxt">Track Status</button>
+          <div *ngIf="isUserPassportExist">
+            <table class="table table-hover mt-3">
+              <thead>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Name of Applicant</th>
+                  <th>Application type</th>
+                  <th>Application Number</th>
+                  <th>DOB</th>
+                  <th>Passport Status</th>
+                  <th>Payment Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>{{ passportData[0].applicantForm.applicantName }}</td>
+                  <td>
+                    {{ passportData[0].serviceRequestForm.applicationType }}
+                  </td>
+                  <td>{{ passportData[0].passportNumber }}</td>
+                  <td>{{ passportData[0].applicantForm.dob }}</td>
+                  <td>{{ passportData[0].passportStatus }}</td>
+                  <td>{{ passportData[0].paymentStatus }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
