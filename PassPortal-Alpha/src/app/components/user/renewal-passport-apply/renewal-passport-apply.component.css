@@ -1,0 +1,61 @@
+/* Adjust the border color of the tab content to match the primary color */
+.tab-content {
+    border-color: var(--color-primary);
+  }
+  
+  /* Style the card header to match the primary color */
+  .card-header {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  
+  /* Style the card body to match the gradient or secondary color */
+  .card-body {
+    background: #FEFAE0; /* Your existing gradient */
+  }
+  
+  /* Apply primary color to active tab and tab text */
+  .nav-tabs .nav-link.active {
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  
+  /* Apply secondary color to inactive tabs */
+  .nav-tabs .nav-link {
+    background-color: var(--color-secondary);
+    color: #FEFAE0;
+  }
+  
+  /* Change hover color for tabs */
+  .nav-tabs .nav-link:hover {
+    background-color: var(--color-primary);
+    color: #FEFAE0;
+  }
+  
+  /* Apply the primary color to the Previous button */
+  #btnPrev {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+  }
+  
+  /* Change the hover color to the secondary color */
+  #btnPrev:hover {
+    background-color: var(--color-secondary);
+    color: #FEFAE0;
+  }
+  
+  /* Apply the primary color to the Next button */
+  #btnNext {
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+  }
+  
+  /* Change the hover color to the secondary color */
+  #btnNext:hover {
+    background-color: var(--color-secondary);
+    color: #FEFAE0;
+  }
+  
+  

@@ -41,6 +41,11 @@ export const USER_ROUTES: Routes = [
         component: NewPassportApplyComponent,
         data: { breadcrumb: 'New Passport Application' },
       },
+      {
+        path: 'renewpass',
+        component: NewPassportApplyComponent,
+        data: { breadcrumb: 'Renewal Passport Application' },
+      },
     ],
   },
 ];
