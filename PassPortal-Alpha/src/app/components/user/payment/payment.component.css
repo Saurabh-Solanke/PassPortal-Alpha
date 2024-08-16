@@ -1,0 +1,46 @@
+/* Example CSS to match your theme */
+.main {
+  background-color: var(--color-primary);
+}
+
+h3.text-success {
+  color: var(--color-secondary);
+}
+
+input.form-control {
+  border-color: var(--color-secondary);
+}
+
+
+.input-group-text {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.fw-bold {
+  color: var(--color-secondary);
+}
+
+.btn-nxt {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.btn-nxt:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn-prev {
+  background-color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-prev:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}

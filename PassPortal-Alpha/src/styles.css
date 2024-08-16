@@ -5,10 +5,10 @@
   --color-support1: #faf2f2;
 }
 .c1 {
-  color: var(--color-primary);
+color: var(--color-primary);
 }
 .c2 {
-  color: var(--color-secondary);
+color: var(--color-secondary);
 }
 .content {
   padding-top: 0px; /* Adjust this based on the height of your navbar */

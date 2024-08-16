@@ -9,6 +9,7 @@ import { FaqComponent } from './faq/faq.component';
 import { NewPassportApplyComponent } from './new-passport-apply/new-passport-apply.component';
 import { RenewalPassportApplyComponent } from './renewal-passport-apply/renewal-passport-apply.component';
 import { TrackStatusComponent } from './track-status/track-status.component';
+import { PaymentComponent } from './payment/payment.component';
 
 export const USER_ROUTES: Routes = [
   {
@@ -52,6 +53,11 @@ export const USER_ROUTES: Routes = [
         path: 'history',
         component: TrackStatusComponent,
         data: { breadcrumb: 'Track Form Status' },
+      },
+      {
+        path: 'payment',
+        component: PaymentComponent,
+        data: { breadcrumb: 'Payment' },
       },
     ],
   },

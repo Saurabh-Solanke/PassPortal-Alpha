@@ -703,9 +703,9 @@
       "submittedByUserId": "",
       "passportNumber": "7354002427",
       "passportStatus": "Applied",
-      "paymentStatus": "Unpaid",
-      "transactionId": "",
-      "transactionTimestamp": "",
+      "paymentStatus": "unpaid",
+      "transactionId": "157035173095",
+      "transactionTimestamp": "2024-08-16T00:03:43.850Z",
       "isReNew": false,
       "serviceRequestForm": {
         "applicationType": "normal",
@@ -794,6 +794,5 @@
       }
     }
   ],
-
   "Re-NewPassport": []
 }

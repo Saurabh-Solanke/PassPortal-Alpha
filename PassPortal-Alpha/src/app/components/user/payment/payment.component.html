@@ -1,0 +1,265 @@
+<div class="container-fluid p-0">
+  <app-user-navbar></app-user-navbar>
+</div>
+<p-toast></p-toast>
+
+<div class="container-fluid min-vh-70 p-0">
+  <div class="flex-grow-1">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-12">
+        <div *ngIf="!isUserPassportExist">
+          <form
+            [formGroup]="trackForm"
+            class="needs-validation"
+            (ngSubmit)="ProceedToPay()"
+          >
+            <div class="mt-3 border shadow p-5">
+              <h3 class="fw-bold">Make Payment</h3>
+
+              <div class="mb-3">
+                <label for="applicationType" class="form-label"
+                  >Select Application Type</label
+                >
+                <select
+                  id="applicationType"
+                  class="form-select"
+                  formControlName="applicationType"
+                  required
+                >
+                  <option value="">-- select --</option>
+                  <option value="Normal Passport">Normal Passport</option>
+                  <option value="Tatkal Passport">Tatkal Passport</option>
+                </select>
+                <span
+                  *ngIf="
+                    trackForm.get('applicationType')?.touched &&
+                    trackForm.get('applicationType')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span
+                    *ngIf="
+                      trackForm.get('applicationType')?.errors?.['required']
+                    "
+                    >Please select an application type.</span
+                  >
+                </span>
+              </div>
+              <div class="mb-3">
+                <label for="passportNumber" class="form-label"
+                  >Passport Number</label
+                >
+                <input
+                  type="text"
+                  id="passportNumber"
+                  class="form-control"
+                  formControlName="passportNumber"
+                  pattern="[0-9]{10}"
+                  minlength="10"
+                  maxlength="10"
+                  placeholder="Passport Number"
+                  title="Please enter a 10-digit numeric Passport Number"
+                />
+                <span
+                  *ngIf="
+                    trackForm.get('passportNumber')?.touched &&
+                    trackForm.get('passportNumber')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span
+                    *ngIf="trackForm.get('passportNumber')?.errors?.['required']"
+                    >Please enter a valid passport number.</span
+                  >
+                  <span
+                    *ngIf="trackForm.get('passportNumber')?.errors?.['pattern']"
+                    >Passport number must be 10 digits.</span
+                  >
+                </span>
+              </div>
+              <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input
+                  type="date"
+                  id="dob"
+                  class="form-control"
+                  formControlName="dob"
+                  required
+                />
+                <span
+                  *ngIf="
+                    trackForm.get('dob')?.touched &&
+                    trackForm.get('dob')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span *ngIf="trackForm.get('dob')?.errors?.['required']"
+                    >Please enter your date of birth.</span
+                  >
+                </span>
+              </div>
+              <button type="submit" class="btn btn-nxt mt-3">Proceed to Pay</button>
+            </div>
+          </form>
+        </div>
+        <div *ngIf="isUserPassportExist">
+          <form
+            [formGroup]="paymentForm"
+            class="needs-validation"
+            (ngSubmit)="MakePayment()"
+          >
+            <div class="mt-3 border shadow p-5">
+              <h3 class="fw-bold">Make Payment</h3>
+              <hr />
+              <div class="mb-3">
+                <label for="paymentType" class="form-label"
+                  >Select Payment Type</label
+                >
+                <select
+                  id="paymentType"
+                  class="form-select"
+                  formControlName="paymentType"
+                  required
+                >
+                  <option value="">-- Select --</option>
+                  <option value="Debit card">Debit card</option>
+                  <option value="Credit card">Credit card</option>
+                </select>
+                <span
+                  *ngIf="
+                    paymentForm.get('paymentType')?.touched &&
+                    paymentForm.get('paymentType')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span
+                    *ngIf="
+                      paymentForm.get('paymentType')?.errors?.['required']
+                    "
+                    >Please select a payment type.</span
+                  >
+                </span>
+              </div>
+              <div class="mb-3">
+                <label for="name" class="form-label">Card Holder Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Card Holder Name"
+                />
+                <span
+                  *ngIf="
+                    paymentForm.get('name')?.touched &&
+                    paymentForm.get('name')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span *ngIf="paymentForm.get('name')?.errors?.['required']"
+                    >Please enter your name.</span
+                  >
+                  <span *ngIf="paymentForm.get('name')?.errors?.['pattern']"
+                    >Only alphabetic characters (A-Z, a-z) and spaces are
+                    allowed.</span
+                  >
+                </span>
+              </div>
+              <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number</label>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  class="form-control"
+                  formControlName="cardNumber"
+                  placeholder="1234-5678-1234-5678"
+                  maxlength="16"
+                  title="Please enter a valid card number in the format 1234-5678-1234-5678 (digits 0-9 only)"
+                />
+                <span
+                  *ngIf="
+                    paymentForm.get('cardNumber')?.touched &&
+                    paymentForm.get('cardNumber')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span
+                    *ngIf="paymentForm.get('cardNumber')?.errors?.['required']"
+                    >Please enter a valid card number.</span
+                  >
+                  <!-- <span *ngIf="paymentForm.get('cardNumber')?.errors?.['pattern']">Card number must be in the format 1234-5678-1234-5678.</span> -->
+                </span>
+              </div>
+              <div class="mb-3">
+                <label for="expiryDate" class="form-label">Expiry Date</label>
+                <input
+                  type="month"
+                  id="expiryDate"
+                  class="form-control"
+                  formControlName="expiryDate"
+                  required
+                />
+                <span
+                  *ngIf="
+                    paymentForm.get('expiryDate')?.touched &&
+                    paymentForm.get('expiryDate')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span
+                    *ngIf="paymentForm.get('expiryDate')?.errors?.['required']"
+                    >Please enter the expiry date.</span
+                  >
+                </span>
+              </div>
+              <div class="mb-3">
+                <label for="cvv" class="form-label">CVV</label>
+                <input
+                  type="text"
+                  id="cvv"
+                  class="form-control"
+                  formControlName="cvv"
+                  placeholder="Enter CVV"
+                  minlength="3"
+                  maxlength="3"
+                  pattern="[0-9]{3}"
+                  title="Please enter a 3-digit CVV."
+                />
+                <span
+                  *ngIf="
+                    paymentForm.get('cvv')?.touched &&
+                    paymentForm.get('cvv')?.invalid
+                  "
+                  class="text-danger fw-medium"
+                >
+                  <span *ngIf="paymentForm.get('cvv')?.errors?.['required']"
+                    >Please enter a valid CVV.</span
+                  >
+                  <span *ngIf="paymentForm.get('cvv')?.errors?.['pattern']"
+                    >CVV must be 3 digits.</span
+                  >
+                </span>
+              </div>
+
+              <div class="mb-3">
+                <label for="amount" class="form-label">Total Amount</label>
+                <div class="input-group">
+                  <span class="input-group-text">&#X20B9;</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="amount"
+                    formControlName="amount"
+                    readonly
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-nxt mt-3">Make Payment</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
